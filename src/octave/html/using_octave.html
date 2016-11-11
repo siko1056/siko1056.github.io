@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Using Octave</title>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] },
+  TeX: { equationNumbers: { autoNumber: 'all' } }
+});
+</script>
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<style>
+body > * {
+  max-width: 42em;
+}
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  padding-left: 7.5em;
+  padding-right: 7.5em;
+}
+pre, code {
+  max-width: 50em;
+  font-family: monospace;
+}
+pre.oct-code {
+  border: 1px solid Grey;
+  padding: 5px;
+}
+pre.oct-code-output {
+  margin-left: 2em;
+}
+span.comment {
+  color: ForestGreen;
+}
+span.keyword {
+  color: Blue;
+}
+span.string {
+  color: DarkOrchid;
+}
+footer {
+  margin-top: 2em;
+  font-size: 80%;
+}
+a, a:visited {
+  color: Blue;
+}
+h2 {
+  font-family: "Roboto Condensed", serif;
+  margin-top: 1.5em;
+}
+h2 a, h2 a:visited {
+  color: Black;
+}
+</style>
+</head>
+<body>
+<h1>Using Octave</h1>
+<p>First, follow the
+<a href="https://www.gnu.org/software/octave/doc/interpreter/Installation.html">installation guide</a>
+to install GNU Octave on your system.  Then, launch the interactive prompt by
+typing <code>octave</code> in a terminal or by clicking the icon in the programs menu.
+For further guidance, see the manual page on
+<a href="https://www.gnu.org/software/octave/doc/interpreter/Running-Octave.html">Running Octave</a>.</p><h2>Contents</h2><ul><li><a href="#node1">Variable Assignment</a></li><li><a href="#node2">Comments</a></li><li><a href="#node3">Command evaluation</a></li><li><a href="#node4">Elementary math</a></li><li><a href="#node5">Matrices</a></li><li><a href="#node6">Linear Algebra</a></li><li><a href="#node7">Accessing Elements</a></li><li><a href="#node8">Control flow wih loops</a></li><li><a href="#node9">Vectorization</a></li><li><a href="#node10">Plotting</a></li><li><a href="#node11">Strings</a></li><li><a href="#node12">If-else</a></li><li><a href="#node13">Getting Help</a></li><li><a href="#node14">Octave forge packages</a></li></ul><h2><a id="node1">Variable Assignment</a></h2><p>Assign values to variables with <code>=</code> (Note: assignment is <i>pass-by-value</i>).
+Read more
+<a href="https://www.gnu.org/software/octave/doc/interpreter/Variables.html">about variables</a>.</p><pre class="oct-code">a = 1;</pre><pre class="oct-code-output"></pre><h2><a id="node2">Comments</a></h2><p><code>#</code> or <code>%</code> start a comment line, that continues to the end of the line.
+Read more
+<a href="https://www.gnu.org/software/octave/doc/interpreter/Comments.html">about comments</a>.</p><h2><a id="node3">Command evaluation</a></h2><p>The output of every command is printed to the console unless terminated with
+a semicolon <code>;</code>.  The <a href="https://www.gnu.org/software/octave/doc/interpreter/XREFdisp.html">disp</a> command can be used to print output
+anywhere.  Use <a href="https://www.gnu.org/software/octave/doc/interpreter/XREFquit.html">exit</a> or <a href="https://www.gnu.org/software/octave/doc/interpreter/XREFquit.html">quit</a> to quit the console.
+Read more
+<a href="https://www.gnu.org/software/octave/doc/interpreter/Simple-Examples.html">about command evaluation</a>.</p><pre class="oct-code">t = 99 + 1  <span class="comment"># prints 't = 100'</span>
+</pre><pre class="oct-code-output">t =  100
+</pre><pre class="oct-code">t = 99 + 1; <span class="comment"># nothing is printed</span>
+disp(t);</pre><pre class="oct-code-output"> 100
+</pre><h2><a id="node4">Elementary math</a></h2><p>Many mathematical operators are available in addition to the standard
+arithmetic.  Operations are floating-point.  Read more
+<a href="https://www.gnu.org/software/octave/doc/interpreter/Arithmetic.html">about elementary math</a>.</p><pre class="oct-code">x = 3/4 * pi;
+y = sin (x)</pre><pre class="oct-code-output">y =  0.70711
+</pre><h2><a id="node5">Matrices</a></h2><p>Arrays in Octave are called matrices.  One-dimensional matrices are referred
+to as vectors.  Use a space or a comma <code>,</code> to separate elements in a row and
+semicolon <code>;</code> to start a new row.  Read more
+<a href="https://www.gnu.org/software/octave/doc/interpreter/Linear-Algebra.html">about matrices</a>.</p><pre class="oct-code">rowVec = [8 6 4]</pre><pre class="oct-code-output">rowVec =
+   8   6   4
+</pre><pre class="oct-code">columnVec = [8; 6; 4]</pre><pre class="oct-code-output">columnVec =
+   8
+   6
+   4
+</pre><pre class="oct-code">mat = [8 6 4; 2 0 -2]</pre><pre class="oct-code-output">mat =
+   8   6   4
+   2   0  -2
+</pre><pre class="oct-code">size(mat)</pre><pre class="oct-code-output">ans =
+   2   3
+</pre><pre class="oct-code">length(rowVec)</pre><pre class="oct-code-output">ans =  3
+</pre><h2><a id="node6">Linear Algebra</a></h2><p>Many common linear algebra operations are simple to program using Octave’s
+matrix syntax.  Read more
+<a href="https://www.gnu.org/software/octave/doc/interpreter/Linear-Algebra.html">about linear algebra</a>.</p><pre class="oct-code">columnVec * rowVec</pre><pre class="oct-code-output">ans =
+   64   48   32
+   48   36   24
+   32   24   16
+</pre><pre class="oct-code">rowVec * columnVec</pre><pre class="oct-code-output">ans =  116
+</pre><pre class="oct-code">columnVec<span class="string">'</span></pre><pre class="oct-code-output">ans =
+   8   6   4
+</pre><h2><a id="node7">Accessing Elements</a></h2><p>Octave is 1-indexed.  Matrix elements are accessed as
+<code>matrix(rowNum, columnNum)</code>.  Read more
+<a href="https://www.gnu.org/software/octave/doc/interpreter/Index-Expressions.html">about accessing elements</a>.</p><pre class="oct-code">mat(2,3)</pre><pre class="oct-code-output">ans = -2
+</pre><h2><a id="node8">Control flow wih loops</a></h2><p>Octave supports <code>for</code> and <code>while</code> loops, as well as other control flow
+structures.  Read more
+<a href="https://www.gnu.org/software/octave/doc/interpreter/Statements.html">about control flow</a>.</p><pre class="oct-code">x = zeros (50,1);
+<span class="keyword">for</span> i = 1:2:100 <span class="comment"># iterate from 1 to 100 with step size 2</span>
+  x(i) = i^2;
+<span class="keyword">endfor</span>
+
+y = zeros (50,1);
+k = 1;
+step = 2;
+<span class="keyword">while</span> (k <= (100-step))
+  y(i) = k^2;
+  k = k + step;
+<span class="keyword">endwhile</span></pre><pre class="oct-code-output"></pre><h2><a id="node9">Vectorization</a></h2><p>For-loops can often be replaced or simplified using vector syntax.  The
+operators <code>*</code>, <code>/</code>, and <code>^</code> all support element-wise operations writing
+a dot <code>.</code> before the operators.  Many other functions operate element-wise
+by default (<a href="https://www.gnu.org/software/octave/doc/interpreter/XREFsin.html">sin</a>, <code>+</code>, <code>-</code>, etc.).  Read more
+<a href="https://www.gnu.org/software/octave/doc/interpreter/Vectorization-and-Faster-Code-Execution.html">about vectorization</a>.</p><pre class="oct-code">i = 1:2:100;      <span class="comment"># create an array with 50-elements</span>
+x = i.^2;         <span class="comment"># each element is squared</span>
+y = x + 9;        <span class="comment"># add 9 to each element</span>
+z = y./i;         <span class="comment"># divide each element in y by the corresponding value in i</span>
+w = sin (i / 10); <span class="comment"># take the sine of each element divided by 10</span>
+</pre><pre class="oct-code-output"></pre><h2><a id="node10">Plotting</a></h2><p>The function <a href="https://www.gnu.org/software/octave/doc/interpreter/XREFplot.html">plot</a> can be called with vector arguments to
+create 2D line and scatter plots.  Read more
+<a href="https://www.gnu.org/software/octave/doc/interpreter/Two_002dDimensional-Plots.html">about plotting</a>.</p><pre class="oct-code">plot (i / 10, w);
+title (<span class="string">'w = sin (i / 10)'</span>);
+xlabel (<span class="string">'i / 10'</span>);
+ylabel (<span class="string">'w'</span>);</pre><pre class="oct-code-output"></pre><img src="using_octave-1.png" alt="using_octave-1.png"><h2><a id="node11">Strings</a></h2><p>Strings are simply arrays of characters.  Strings can be composed using
+C-style formatting with <a href="https://www.gnu.org/software/octave/doc/interpreter/XREFsprintf.html">sprintf</a> or
+<a href="https://www.gnu.org/software/octave/doc/interpreter/XREFfprintf.html">fprintf</a>.  Read more
+<a href="https://www.gnu.org/software/octave/doc/interpreter/Strings.html">about strings</a>.</p><pre class="oct-code">firstString = <span class="string">"hello world"</span>;
+secondString = <span class="string">"!"</span>;
+[firstString, secondString] <span class="comment"># concatenate both strings</span>
+</pre><pre class="oct-code-output">ans = hello world!
+</pre><pre class="oct-code">fprintf (<span class="string">"%s %.10f \n"</span>, <span class="string">"The number is:"</span>, 10)</pre><pre class="oct-code-output">The number is: 10.0000000000 
+</pre><h2><a id="node12">If-else</a></h2><p>Conditional statements can be used to create branching logic in your code.
+Read more
+<a href="https://www.gnu.org/software/octave/doc/interpreter/The-if-Statement.html">in the manual</a>.</p><pre class="oct-code"><span class="comment"># Print 'Foo'      if divisible by 7,</span>
+<span class="comment">#       'Fizz'     if divisible by 3,</span>
+<span class="comment">#       'Buzz'     if divisible by 5,</span>
+<span class="comment">#       'FizzBuzz' if divisible by 3 and 5</span>
+<span class="keyword">for</span> i = 1:1:20
+  outputString = <span class="string">""</span>;
+  <span class="keyword">if</span> (rem (i, 3) == 0)  <span class="comment"># rem is the remainder function</span>
+    outputString = [outputString, <span class="string">"Fizz"</span>];
+  <span class="keyword">endif</span>
+  <span class="keyword">if</span> (rem (i, 5) == 0)
+    outputString = [outputString, <span class="string">"Buzz"</span>];
+  <span class="keyword">elseif</span> (rem(i,7) == 0)
+    outputString = <span class="string">"Foo"</span>;
+  <span class="keyword">else</span>
+    outputString = outputString;
+  <span class="keyword">endif</span>
+  fprintf(<span class="string">"i=%g: %s \n"</span>, i, outputString);
+<span class="keyword">endfor</span></pre><pre class="oct-code-output">i=1:  
+i=2:  
+i=3: Fizz 
+i=4:  
+i=5: Buzz 
+i=6: Fizz 
+i=7: Foo 
+i=8:  
+i=9: Fizz 
+i=10: Buzz 
+i=11:  
+i=12: Fizz 
+i=13:  
+i=14: Foo 
+i=15: FizzBuzz 
+i=16:  
+i=17:  
+i=18: Fizz 
+i=19:  
+i=20: Buzz 
+</pre><h2><a id="node13">Getting Help</a></h2><p>The <a href="https://www.gnu.org/software/octave/doc/interpreter/XREFhelp.html">help</a> and <a href="https://www.gnu.org/software/octave/doc/interpreter/XREFdoc.html">doc</a> commands can be invoked at the
+Octave prompt to print documentation for any function.</p><pre class="pre-code">help plot
+doc plot</pre><h2><a id="node14">Octave forge packages</a></h2><p>Community-developed packages can be added from the
+<a href="http://octave.sourceforge.net/index.html">Octave Forge</a> website to extend
+the functionality of Octave’s core library.  (Matlab users: Forge packages
+act similarly to Matlab’s toolboxes.)  The <a href="https://www.gnu.org/software/octave/doc/interpreter/XREFpkg.html">pkg</a> command is used
+to manage these packages.  For example, to use the image processing library
+from the Forge, use:</p><pre class="pre-code">pkg install -forge image <span class="comment"># install package</span>
+pkg load image           <span class="comment"># load new functions into workspace</span>
+</pre><p><a href="https://www.gnu.org/software/octave/doc/interpreter/Packages.html">Read more about packages</a>.</p>
+<footer><hr><a href="http://www.octave.org">Published with GNU Octave 4.2.0-rc4</a></footer>
+<!--
+##### SOURCE BEGIN #####
+## Using Octave
+#
+# First, follow the
+# <https://www.gnu.org/software/octave/doc/interpreter/Installation.html installation guide>
+# to install GNU Octave on your system.  Then, launch the interactive prompt by
+# typing |octave| in a terminal or by clicking the icon in the programs menu.
+# For further guidance, see the manual page on
+# <https://www.gnu.org/software/octave/doc/interpreter/Running-Octave.html Running Octave>.
+#
+##
+
+## Variable Assignment
+#
+# Assign values to variables with |=| (Note: assignment is _pass-by-value_).
+# Read more
+# <https://www.gnu.org/software/octave/doc/interpreter/Variables.html about variables>.
+#
+
+a = 1;
+
+## Comments
+#
+# |#| or |%| start a comment line, that continues to the end of the line.
+# Read more
+# <https://www.gnu.org/software/octave/doc/interpreter/Comments.html about comments>.
+#
+
+## Command evaluation
+#
+# The output of every command is printed to the console unless terminated with
+# a semicolon |;|.  The <octave:disp disp> command can be used to print output
+# anywhere.  Use <octave:quit exit> or <octave:quit quit> to quit the console.
+# Read more
+# <https://www.gnu.org/software/octave/doc/interpreter/Simple-Examples.html about command evaluation>.
+#
+
+t = 99 + 1  # prints 't = 100'
+
+##
+
+t = 99 + 1; # nothing is printed
+disp(t);
+
+## Elementary math
+#
+# Many mathematical operators are available in addition to the standard
+# arithmetic.  Operations are floating-point.  Read more
+# <https://www.gnu.org/software/octave/doc/interpreter/Arithmetic.html about elementary math>.
+#
+
+x = 3/4 * pi;
+y = sin (x)
+
+## Matrices
+#
+# Arrays in Octave are called matrices.  One-dimensional matrices are referred
+# to as vectors.  Use a space or a comma |,| to separate elements in a row and
+# semicolon |;| to start a new row.  Read more
+# <https://www.gnu.org/software/octave/doc/interpreter/Linear-Algebra.html about matrices>.
+#
+
+rowVec = [8 6 4]
+
+##
+
+columnVec = [8; 6; 4]
+
+##
+
+mat = [8 6 4; 2 0 -2]
+
+##
+
+size(mat)
+
+##
+
+length(rowVec)
+
+## Linear Algebra
+#
+# Many common linear algebra operations are simple to program using Octave’s
+# matrix syntax.  Read more
+# <https://www.gnu.org/software/octave/doc/interpreter/Linear-Algebra.html about linear algebra>.
+#
+
+columnVec * rowVec
+
+##
+
+rowVec * columnVec
+
+##
+
+columnVec'
+
+## Accessing Elements
+#
+# Octave is 1-indexed.  Matrix elements are accessed as
+# |matrix(rowNum, columnNum)|.  Read more
+# <https://www.gnu.org/software/octave/doc/interpreter/Index-Expressions.html about accessing elements>.
+#
+
+mat(2,3)
+
+## Control flow wih loops
+#
+# Octave supports |for| and |while| loops, as well as other control flow
+# structures.  Read more
+# <https://www.gnu.org/software/octave/doc/interpreter/Statements.html about control flow>.
+#
+
+x = zeros (50,1);
+for i = 1:2:100 # iterate from 1 to 100 with step size 2
+  x(i) = i^2;
+endfor
+
+y = zeros (50,1);
+k = 1;
+step = 2;
+while (k <= (100-step))
+  y(i) = k^2;
+  k = k + step;
+endwhile
+
+## Vectorization
+#
+# For-loops can often be replaced or simplified using vector syntax.  The
+# operators |*|, |/|, and |^| all support element-wise operations writing
+# a dot |.| before the operators.  Many other functions operate element-wise
+# by default (<octave:sin sin>, |+|, |-|, etc.).  Read more
+# <https://www.gnu.org/software/octave/doc/interpreter/Vectorization-and-Faster-Code-Execution.html about vectorization>.
+#
+
+i = 1:2:100;      # create an array with 50-elements
+x = i.^2;         # each element is squared
+y = x + 9;        # add 9 to each element
+z = y./i;         # divide each element in y by the corresponding value in i
+w = sin (i / 10); # take the sine of each element divided by 10
+
+## Plotting
+#
+# The function <octave:plot plot> can be called with vector arguments to
+# create 2D line and scatter plots.  Read more
+# <https://www.gnu.org/software/octave/doc/interpreter/Two_002dDimensional-Plots.html about plotting>.
+#
+
+plot (i / 10, w);
+title ('w = sin (i / 10)');
+xlabel ('i / 10');
+ylabel ('w');
+
+## Strings
+#
+# Strings are simply arrays of characters.  Strings can be composed using
+# C-style formatting with <octave:sprintf sprintf> or
+# <octave:fprintf fprintf>.  Read more
+# <https://www.gnu.org/software/octave/doc/interpreter/Strings.html about strings>.
+#
+
+firstString = "hello world";
+secondString = "!";
+[firstString, secondString] # concatenate both strings
+
+##
+
+fprintf ("%s %.10f \n", "The number is:", 10)
+
+## If-else
+#
+# Conditional statements can be used to create branching logic in your code.
+# Read more
+# <https://www.gnu.org/software/octave/doc/interpreter/The-if-Statement.html in the manual>.
+#
+
+# Print 'Foo'      if divisible by 7,
+#       'Fizz'     if divisible by 3,
+#       'Buzz'     if divisible by 5,
+#       'FizzBuzz' if divisible by 3 and 5
+for i = 1:1:20
+  outputString = "";
+  if (rem (i, 3) == 0)  # rem is the remainder function
+    outputString = [outputString, "Fizz"];
+  endif
+  if (rem (i, 5) == 0)
+    outputString = [outputString, "Buzz"];
+  elseif (rem(i,7) == 0)
+    outputString = "Foo";
+  else
+    outputString = outputString;
+  endif
+  fprintf("i=%g: %s \n", i, outputString);
+endfor
+
+## Getting Help
+#
+# The <octave:help help> and <octave:doc doc> commands can be invoked at the
+# Octave prompt to print documentation for any function.
+#
+#   help plot
+#   doc plot
+#
+
+## Octave forge packages
+#
+# Community-developed packages can be added from the
+# <http://octave.sourceforge.net/index.html Octave Forge> website to extend
+# the functionality of Octave’s core library.  (Matlab users: Forge packages
+# act similarly to Matlab’s toolboxes.)  The <octave:pkg pkg> command is used
+# to manage these packages.  For example, to use the image processing library
+# from the Forge, use:
+#
+#   pkg install -forge image # install package
+#   pkg load image           # load new functions into workspace
+#
+# <https://www.gnu.org/software/octave/doc/interpreter/Packages.html Read more about packages>.
+#
+##### SOURCE END #####
+-->
+</body>
+</html>
