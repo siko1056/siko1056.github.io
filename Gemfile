@@ -21,6 +21,6 @@ gem "minima", "~> 2.0"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
    gem "jekyll-feed", "~> 0.8"
-   gem "jekyll-octicons", "~> 3.0"
+#   gem "jekyll-octicons", "~> 3.0"
    gem "pygments.rb", "~> 0.6"
 end

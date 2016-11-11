@@ -28,7 +28,7 @@ theme: minima
 highlighter: pygments
 gems:
   - jekyll-feed
-  - jekyll-octicons
+#  - jekyll-octicons
 exclude:
   - Gemfile
   - Gemfile.lock
