@@ -21,7 +21,7 @@ layout: default
 - <a class="post-link" href="{{ doc.url | relative_url }}">{{ doc.title | escape }}</a>
   <span class="post-meta">{{ doc.date | date: "%b %-d, %Y" }}</span>
 
-      grabcode ("https://siko1056.github.io{{ doc.path | replace: '_octave_publish', 'src/octave/html' | replace: '.markdown', '.html' }}")
+      grabcode ("https://siko1056.github.io/{{ doc.path | replace: '_octave_publish', 'src/octave/html' | replace: '.markdown', '.html' }}")
 
 {% endfor %}
 
