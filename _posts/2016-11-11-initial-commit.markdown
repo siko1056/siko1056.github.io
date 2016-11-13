@@ -37,4 +37,4 @@ hacking into the code of the publish function.
 3. Assign the `publish_jekyll_md_output.m` to that new format
    in the subfunction `create_output`.
 
-[5]: {{ "/src/octave/publish_jekyll_md_output.m" | absolute_url }}
+[5]: {{ "/src/" | absolute_url }}
