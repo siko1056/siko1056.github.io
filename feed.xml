@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://siko1056.github.io/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="https://siko1056.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://siko1056.github.io/" rel="alternate" type="text/html" /><updated>2016-11-13T22:39:00+01:00</updated><id>https://siko1056.github.io//</id><title type="html">siko1056’s website</title><subtitle>Yet another blog about stuff I do.
+</subtitle><author><name>Kai Torben Ohlhus</name></author><entry><title type="html">Some drawbacks with GitHub pages</title><link href="https://siko1056.github.io/blog/2016/11/13/some-drawbacks-with-github-pages.html" rel="alternate" type="text/html" title="Some drawbacks with GitHub pages" /><published>2016-11-13T00:00:00+01:00</published><updated>2016-11-13T00:00:00+01:00</updated><id>https://siko1056.github.io/blog/2016/11/13/some-drawbacks-with-github-pages</id><content type="html" xml:base="https://siko1056.github.io/blog/2016/11/13/some-drawbacks-with-github-pages.html">&lt;p&gt;The lovely idea to reproduce the easy static site building with GitHub pages
+revealed some drawbacks, I really have to work around them to keep the
+features I was used to.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;The nice filters of Jekyll 3.3 &lt;code&gt;absolute_url&lt;/code&gt; and &lt;code&gt;relative_url&lt;/code&gt;
+&lt;a href=&quot;https://github.com/blog/2277-what-s-new-in-github-pages-with-jekyll-3-3&quot;&gt;announced by GitHub&lt;/a&gt; I don’t get to work on their machines,
+while on mine everything works as expected.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;The nice little &lt;a href=&quot;https://octicons.github.com/&quot;&gt;GitHub Octicons&lt;/a&gt; plugin is currently not supported
+at &lt;a href=&quot;https://github.com/github/pages-gem&quot;&gt;GitHub pages-gem&lt;/a&gt;. I tried to inline the generated SVG-files
+by hand, but this is a very bad user experience.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;I cannot highlight Octave Code with the default highlighter &lt;a href=&quot;https://github.com/jneen/rouge&quot;&gt;rouge&lt;/a&gt;.
+GitHub pages &lt;a href=&quot;https://help.github.com/articles/using-syntax-highlighting-on-github-pages/&quot;&gt;will not switch back&lt;/a&gt; to &lt;a href=&quot;http://pygments.org/&quot;&gt;pygments&lt;/a&gt;, so I decided to
+create a &lt;a href=&quot;https://github.com/jneen/rouge/pull/568&quot;&gt;pull request&lt;/a&gt; for adding this feature for the future.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So my plan is now to develop on a &lt;code&gt;dev&lt;/code&gt; branch, generate the page really
+“at home” and just upload the static page to the &lt;code&gt;master&lt;/code&gt; branch until
+my features are supported.&lt;/p&gt;</content><author><name>Kai Torben Ohlhus</name></author><summary type="html">The lovely idea to reproduce the easy static site building with GitHub pages
+revealed some drawbacks, I really have to work around them to keep the
+features I was used to.</summary></entry><entry><title type="html">Initial commit</title><link href="https://siko1056.github.io/blog/2016/11/11/initial-commit.html" rel="alternate" type="text/html" title="Initial commit" /><published>2016-11-11T00:00:00+01:00</published><updated>2016-11-11T00:00:00+01:00</updated><id>https://siko1056.github.io/blog/2016/11/11/initial-commit</id><content type="html" xml:base="https://siko1056.github.io/blog/2016/11/11/initial-commit.html">&lt;p&gt;While working with &lt;a href=&quot;https://github.com/alexkrolick&quot;&gt;&lt;span class=&quot;icon icon--github&quot;&gt;&lt;svg viewBox=&quot;0 0 16 16&quot; width=&quot;16px&quot; height=&quot;16px&quot;&gt;&lt;path fill=&quot;#828282&quot; d=&quot;M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;
+&lt;/span&gt;&lt;span class=&quot;username&quot;&gt;alexkrolick&lt;/span&gt;&lt;/a&gt;
+ on the &lt;a href=&quot;http://hg.octave.org/web-octave/&quot;&gt;new GNU Octave website&lt;/a&gt;,
+I got aware of &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; and do really like the idea of generating
+all webpages “at home” to avoid the overhead of dynamic pages,
+where the content is not likely to change that frequent.&lt;/p&gt;
+
+&lt;p&gt;I am looking for “more beautiful” ways to document things
+I do with and for the &lt;a href=&quot;http://www.octave.org&quot;&gt;GNU Octave&lt;/a&gt; project.
+The current ways of documenting Octave code
+will be addressed within another post.
+Anyway,
+as noncompetitive summer of code project of mine
+the &lt;a href=&quot;https://github.com/siko1056/octave-publish&quot;&gt;publish function&lt;/a&gt; was created and merged within the Octave core
+for the approaching 4.2 release.
+Here will be my playground to display the “published” documents
+and maybe some other things I don’t want to forget.&lt;/p&gt;
+
+&lt;p&gt;To create those “published” pages,
+listed on the main page of this blog,
+one can use &lt;a href=&quot;https://siko1056.github.io/src/octave/publish_jekyll_md_output.m&quot;&gt;&lt;code&gt;publish_jekyll_md_output.m&lt;/code&gt;&lt;/a&gt; and some minor
+hacking into the code of the publish function.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Type from the octave command line &lt;code&gt;edit publish&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Create a new &lt;code&gt;options.format&lt;/code&gt; in the main function.&lt;/li&gt;
+  &lt;li&gt;Assign the &lt;code&gt;publish_jekyll_md_output.m&lt;/code&gt; to that new format
+in the subfunction &lt;code&gt;create_output&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Kai Torben Ohlhus</name></author><summary type="html">While working with 
+alexkrolick
+ on the new GNU Octave website,
+I got aware of Jekyll and do really like the idea of generating
+all webpages “at home” to avoid the overhead of dynamic pages,
+where the content is not likely to change that frequent.</summary></entry></feed>
