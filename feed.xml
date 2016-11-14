@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://siko1056.github.io/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="https://siko1056.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://siko1056.github.io/" rel="alternate" type="text/html" /><updated>2016-11-13T22:39:00+01:00</updated><id>https://siko1056.github.io//</id><title type="html">siko1056’s website</title><subtitle>Yet another blog about stuff I do.
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://siko1056.github.io/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="https://siko1056.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://siko1056.github.io/" rel="alternate" type="text/html" /><updated>2016-11-14T11:40:45+01:00</updated><id>https://siko1056.github.io//</id><title type="html">siko1056’s website</title><subtitle>Yet another blog about stuff I do.
 </subtitle><author><name>Kai Torben Ohlhus</name></author><entry><title type="html">Some drawbacks with GitHub pages</title><link href="https://siko1056.github.io/blog/2016/11/13/some-drawbacks-with-github-pages.html" rel="alternate" type="text/html" title="Some drawbacks with GitHub pages" /><published>2016-11-13T00:00:00+01:00</published><updated>2016-11-13T00:00:00+01:00</updated><id>https://siko1056.github.io/blog/2016/11/13/some-drawbacks-with-github-pages</id><content type="html" xml:base="https://siko1056.github.io/blog/2016/11/13/some-drawbacks-with-github-pages.html">&lt;p&gt;The lovely idea to reproduce the easy static site building with GitHub pages
 revealed some drawbacks, I really have to work around them to keep the
 features I was used to.&lt;/p&gt;
@@ -7,15 +7,9 @@ features I was used to.&lt;/p&gt;
   &lt;li&gt;The nice filters of Jekyll 3.3 &lt;code&gt;absolute_url&lt;/code&gt; and &lt;code&gt;relative_url&lt;/code&gt;
 &lt;a href=&quot;https://github.com/blog/2277-what-s-new-in-github-pages-with-jekyll-3-3&quot;&gt;announced by GitHub&lt;/a&gt; I don’t get to work on their machines,
 while on mine everything works as expected.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;ol&gt;
   &lt;li&gt;The nice little &lt;a href=&quot;https://octicons.github.com/&quot;&gt;GitHub Octicons&lt;/a&gt; plugin is currently not supported
 at &lt;a href=&quot;https://github.com/github/pages-gem&quot;&gt;GitHub pages-gem&lt;/a&gt;. I tried to inline the generated SVG-files
 by hand, but this is a very bad user experience.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;ol&gt;
   &lt;li&gt;I cannot highlight Octave Code with the default highlighter &lt;a href=&quot;https://github.com/jneen/rouge&quot;&gt;rouge&lt;/a&gt;.
 GitHub pages &lt;a href=&quot;https://help.github.com/articles/using-syntax-highlighting-on-github-pages/&quot;&gt;will not switch back&lt;/a&gt; to &lt;a href=&quot;http://pygments.org/&quot;&gt;pygments&lt;/a&gt;, so I decided to
 create a &lt;a href=&quot;https://github.com/jneen/rouge/pull/568&quot;&gt;pull request&lt;/a&gt; for adding this feature for the future.&lt;/li&gt;
