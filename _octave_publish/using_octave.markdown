@@ -357,4 +357,4 @@ pkg load image           # load new functions into workspace
 [Read more about packages](https://www.gnu.org/software/octave/doc/interpreter/Packages.html).
 
 
-Published with GNU Octave 4.2.0-rc4
+Published with GNU Octave 4.2.0
