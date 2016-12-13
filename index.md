@@ -17,7 +17,7 @@ layout: default
 
 # Files published with [GNU Octave](http://www.octave.org)
 
-{% for doc in site.octave_publish %}
+{% for doc in site.octave_publish reversed %}
 - <a class="post-link" href="{{ doc.url | relative_url }}">{{ doc.title | escape }}</a>
   <span class="post-meta">{{ doc.date | date: "%b %-d, %Y" }}</span>
 
