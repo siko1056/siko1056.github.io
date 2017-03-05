@@ -6,20 +6,21 @@ title: About
 There are too many ways to contact me, some of them I rediscovered
 searching for my name:
 
-# {% octicon broadcast height:32 %} Social media
+# Social media
 
 - [Google+](https://plus.google.com/+KaiTorbenOhlhus)
 - [YouTube](https://www.youtube.com/user/siko1056)
 - [Facebook](https://www.facebook.com/public/Kai-Torben-Ohlhus)
 
-# {% octicon file-code height:32 %} Code sharing
+# Programming
 
 - [Savannah](http://savannah.gnu.org/users/siko1056)
 - [GitHub](https://github.com/siko1056)
 - [SourceForge](https://sourceforge.net/u/siko1056/profile/)
 - [Stack Overflow](https://stackoverflow.com/users/3778706/siko1056)
+- [Wikipedia](https://en.wikipedia.org/wiki/User:Siko1056)
 
-# {% octicon mortar-board height:32 %} Academic
+# Academic
 
 - [ResearchGate](https://www.researchgate.net/profile/Kai_Ohlhus)
 - [Hamburg University of Technology (TUHH)](http://kontakt.tuhh.de/de/suchergebnis.php?Suchtext=Ohlhus)

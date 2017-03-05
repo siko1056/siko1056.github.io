@@ -20,18 +20,15 @@ description: > # this means to ignore newlines until "baseurl:"
   Yet another blog about stuff I do.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://siko1056.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  siko1056
+github_username: siko1056
 
 # Build settings
 markdown: kramdown
 theme: minima
-highlighter: pygments
+paginate: 4
 gems:
   - jekyll-feed
-  - jekyll-octicons
+  - jekyll-paginate
 exclude:
   - Gemfile
   - Gemfile.lock
-collections:
-  octave_publish:
-    output: true
