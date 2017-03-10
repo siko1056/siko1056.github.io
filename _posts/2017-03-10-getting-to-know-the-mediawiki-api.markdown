@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Getting to know the MediaWiki API"
-date:   2017-03-05
+date:   2017-03-10
 categories: blog
 ---
 
