@@ -11,11 +11,13 @@ searching for my name:
 - [Google+](https://plus.google.com/+KaiTorbenOhlhus)
 - [YouTube](https://www.youtube.com/user/siko1056)
 - [Facebook](https://www.facebook.com/public/Kai-Torben-Ohlhus)
+- [XING](https://www.xing.com/profile/KaiTorben_Ohlhus)
+- [LinkedIn](https://www.linkedin.com/)
 
 # Programming
 
 - [Savannah](http://savannah.gnu.org/users/siko1056)
-- [GitHub](https://github.com/siko1056)
+- [GitHub](https://github.com/siko1056) :octocat:
 - [Bitbucket](https://bitbucket.org/siko1056)
 - [SourceForge](https://sourceforge.net/u/siko1056/profile/)
 - [Stack Overflow](https://stackoverflow.com/users/3778706/siko1056)
