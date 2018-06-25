@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Setting up an apache2 webserver on openSUSE Leap 15.0"
+date: 2018-06-25
 categories: blog
 ---
 
@@ -113,7 +114,7 @@ Fortunately, these days one has not to pay to be able to use the HTTPS protocol,
 
       certbot --apache
       
-  This command usually updates the Apache2 configuration file, e.g. `myMkDocsSite.conf`.
+  This command usually updates the Apache2 configuration file, e.g. `myMkDocsSite.conf`above.
   If there are more websites, just call the `certbot` command above again to extend the certificate.
 
 - Update the certificate regulary by establishing a cronjob:
