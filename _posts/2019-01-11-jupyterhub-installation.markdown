@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Setting up JupyterHub on openSUSE Leap 15.0"
-date: 2019-01-10
+date: 2019-01-11
 categories: blog
 ---
 
@@ -10,9 +10,9 @@ the setup of the Apache2 webserver including
 [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) was explained.
 Based upon that effort,
 this blog post deals with the setup of [JupyterHub](https://jupyter.org/hub).
-The goal is to create a online development environment for fancy looking interactive
-[GNU Octave](https://www.octave.org) notebooks.
-Those are a great for explaining mathematical code and software
+The goal is to create an online development environment for fancy looking
+interactive [GNU Octave](https://www.octave.org) notebooks.
+Those are a great tool for explaining mathematical code and software
 as they have builtin support for syntax-highlighting and,
 thanks to [MathJax](https://www.mathjax.org/),
 mathematics.
@@ -26,7 +26,7 @@ often mentioned in this blog post:
     [installed](https://jupyter.readthedocs.io/en/latest/install.html)
     and run locally on your own machine.
   - The [classical](https://jupyter-notebook.readthedocs.io/en/stable/notebook.html)
-    user (notebook) interface (a.k.a. `/tree` see later why).
+    user (notebook) interface (a.k.a. `/tree`, see later why).
 
 - Jupyter**Lab**:
   - The [modern](https://jupyterlab.readthedocs.io/) user (notebook) interface
@@ -36,14 +36,14 @@ often mentioned in this blog post:
   - A multi-user [Jupyter server](https://jupyterhub.readthedocs.io/).
 
 In one sentence,
-the goal is to setup a public JupyterHub-Server to run for authenticated users
+the goal is to setup a public JupyterHub-Server
+to run for certain predefined small group of users
 a Jupyter instance with the modern JupyterLab interface.
 
 
 ## Install required Python-software
 
 The installation might require admin (`sudo`) privileges:
-
 ```bash
 pip3 install --upgrade pip jupyterlab \
                            jupyterhub \
@@ -52,9 +52,8 @@ pip3 install --upgrade pip jupyterlab \
 ```
 
 Finally,
-one can check the installation by starting a local Jupyter server
+one can check the installation by starting a local single-user Jupyter server
 with the JupyterLab interface:
-
 ```bash
 jupyter lab
 ```
@@ -63,7 +62,7 @@ jupyter lab
 ## Configuring the public JupyterHub server
 
 In the desired setup all configuration files for the server are located at
-`/srv/www/jupyterhub` and the server will be publicly reachable
+`/srv/www/jupyterhub` and the server should be accessible by the public
 via `https://www.domain.org:8888` as explained in a
 [previous blog post]({{ site.baseurl }}{% post_url 2018-06-25-apache2-leap-15-0 %}).
 
@@ -75,7 +74,7 @@ jupyterhub --generate-config -f jupyterhub_config.py
 ```
 
 The following options must be changed in `jupyterhub_config.py` to achieve
-the desired Jupyter-server setup:
+the desired JupyterHub-server setup:
 - the port `c.JupyterHub.port = 8888`,
 - the location of the TLS-keys which are already established for the
   Apache2 webserver
@@ -95,6 +94,13 @@ custom configuration:
 jupyterhub --config=/srv/www/jupyterhub/jupyterhub_config.py
 ```
 
+If you want to give the classical notebook interface a try,
+just replace `/lab` by `/tree`:
+```
+https://domain.org:8888/user/localUser/lab?
+                                      /tree?
+```
+
 
 ## Authenticate users
 
@@ -107,31 +113,32 @@ of the underlying server operating system:
 c.JupyterHub.authenticator_class = 'jupyterhub.auth.PAMAuthenticator'
 ```
 This has a serious impact:
-One does not only login to some sandboxed php-application (like a MediaWiki),
+One does not only login to some sandboxed PHP-application (like a MediaWiki),
 one literally logs into the server!
 From Jupyter you can start a terminal window
-and can do any damange you could do from a ssh-login with your given user permissions.
+and can do any damage you could do from a ssh-login with your given user permissions.
 Keep this in mind.
 
 If the desired setup demands more security,
 one should run Jupyter within some virtualization environment.
-But for my purpose using Docker, Kubernetes, or alike seems too bloated.
+But for my purpose using Docker, Kubernetes, or alike seems too bloated
+for a couple of predefined users.
 
 To further control and restrict the user authentication,
 JupyterHub offers features such as a whitelist and a list of admin users:
 ```python
 c.Authenticator.admin_users = {'localUser'}
-c.Authenticator.whitelist = {'localUser'}
+c.Authenticator.whitelist = {'localUser', 'localUser2'}
 ```
 For more options, see <https://jupyterhub.readthedocs.io/en/stable/api/auth.html>.
-Unfortunately, those list are runtime constants.
-You [cannot modify those values](https://github.com/jupyterhub/jupyterhub/issues/1920)
-once Jupyterlab is started (at least not without greater programming effort).
+Unfortunately, those lists
+[cannot be altered at runtime](https://github.com/jupyterhub/jupyterhub/issues/1920).
+Of course one can create custom Python-classes, if needed.
 
 Another problem is that I don't want users to login on my server via password at all.
 Fortunately, [OAuthenticator](https://github.com/jupyterhub/oauthenticator)
-provides several OAuth 2.0 based `authenticator_class'es.
-Amongst them:
+provides several OAuth 2.0 based `authenticator_class`es.
+Among them:
 
 - GitHub
   ```python
@@ -151,17 +158,38 @@ Amongst them:
   c.GoogleOAuthenticator.client_secret = 'xxxxxxxxxxxxxxxxxx'
   ```
 
-  Especially for Google it makes sense to map the authenticated user 
-  ```python
-  c.Authenticator.username_map = {'local.user@gmail.com': 'localUser'}
-  ```
+Especially for Google it makes sense to map the authenticated user
+to a local server account:
+```python
+c.Authenticator.username_map = {'local.user@gmail.com': 'localUser'}
+```
+But again,
+this map cannot be altered without restarting the JupyterHub server.
+
+To sum up:
+New users (for example new colleagues) cannot be created on the fly
+by using the here described setup.
+This requires:
+
+1. Creating a new local user account on the server
+   ```bash
+   useradd --create-home --gid jupyterhub <new colleague>
+   ```
+2. whitelist that local user account `c.Authenticator.whitelist`.
+3. Map that local user account to the OAuth 2.0 authenticated user name
+   `c.Authenticator.username_map`.
+4. Restart JupytherHub.
+
+On the other hand,
+not every user with a valid GitHub or Google account can log in the server.
+
 
 ## Making JupyterHub a system service
 
 The final target is to make the JupyterHub server run,
 even if you are logged out from your remote server.
 
-There are other options such as running JupyterHub in a
+There are other options such as running JupyterHub inside a
 [screen](https://www.gnu.org/software/screen/)-session
 that does not shutdown when the connection to the server is terminated.
 But personally I prefer the solution of creating a system service:
@@ -205,7 +233,7 @@ sudo systemctl enable jupyterhub  # Start service at system boot.
 sudo systemctl start  jupyterhub
 sudo systemctl stop   jupyterhub
 ```
-and the log can be inspected by
+and the server log can be inspected by
 ```bash
 sudo journalctl -u jupyterhub
 ```
