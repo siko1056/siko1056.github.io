@@ -205,7 +205,7 @@ with the following content:
 ```
 [Unit]
 Description=JupyterHub
-After=network.target nss-lookup.target
+After=apache2.target
 
 [Service]
 StandardOutput=syslog
@@ -218,12 +218,11 @@ WorkingDirectory=/srv/www/jupyterhub
 WantedBy=multi-user.target
 ```
 
-The service has to be linked to the standard location and the file
-should be owned by `root`:
+The service file has to be copied to the standard location
+and the file should be owned by `root`:
 ```bash
 sudo chown root:root /srv/www/jupyterhub/jupyterhub.service
-cd /etc/systemd/system/
-sudo ln -s /srv/www/jupyterhub/jupyterhub.service
+sudo cp /srv/www/jupyterhub/jupyterhub.service /etc/systemd/system/jupyterhub.service
 ```
 
 Now one can use the standard mechanisms to start and stop JupyterHub
@@ -243,3 +242,16 @@ sudo journalctl -u jupyterhub
 
 This blog post was greatly inspired by
 <https://pythonforundergradengineers.com/add-google-oauth-and-system-service-to-jupyterhub.html>
+
+
+## Update 2019-01-13
+
+- In the file `/srv/www/jupyterhub/jupyterhub.service`
+  ```diff
+  [Unit]
+  -After=network.target nss-lookup.target
+  +After=apache2.target
+  ```
+  and rather copy that file to `/etc/systemd/system/` instead of just linking it.
+  Occasionally I noticed that JupyterHub did not start automatically,
+  as the location `/srv/www/jupyterhub/` was not available to systemd on time.
