@@ -5,6 +5,8 @@ date: 2018-06-25
 categories: blog
 ---
 
+*Last updated: 2019-06-03*
+
 The goal of this blog post is to properly remember what I did to create my root-server setup using [openSUSE Leap 15.0](https://software.opensuse.org/distributions/leap):
 
 - [Apache web server](https://httpd.apache.org/) with HTTPS support, running
@@ -18,6 +20,7 @@ Two detailed and very useful references for a start are:
 
 - <https://en.opensuse.org/SDB:LAMP_setup>
 - <https://en.opensuse.org/Let%E2%80%99s_Encrypt>
+- <https://doc.opensuse.org/documentation/leap/reference/html/book.opensuse.reference/cha.apache2.html>
 
 Here there are just the bare commands without verbose explanation given.
 All of them should be run with root privileges.
@@ -30,11 +33,11 @@ All of them should be run with root privileges.
                      php7 php7-mysql apache2-mod_php7 \
                      mariadb mariadb-tools \
                      phpMyAdmin
-                   
+
 - Enable Apache modules:
 
       a2enmod php7 rewrite
-    
+
 - Open the necessary ports in the Firewall (`firewalld`):
 
       firewall-cmd --permanent --zone=public --add-service=http --add-service=https
@@ -110,10 +113,15 @@ Fortunately, these days one has not to pay to be able to use the HTTPS protocol,
 
       zypper install certbot python-certbot python-certbot-apache
 
+- Enable the SSL module and ensure the correct server flags:
+
+      a2enmod ssl
+      a2enflag SSL
+
 - Get the certificate by following the output of:
 
       certbot --apache
-      
+
   This command usually updates the Apache2 configuration file, e.g. `myMkDocsSite.conf` above.
   If there are more websites, just call the `certbot` command above again to extend the certificate.
 
@@ -136,12 +144,11 @@ Additionally, the following extensions should be installed:
 
 With openSUSE Leap, the following extra packages are useful to be installed for all the above:
 
-    zypper install git ImageMagick make ocaml \
+    zypper install git ImageMagick make \
                    php7-APCu php7-fileinfo php7-imagick php7-intl php7-mbstring
 
-For the Math-Extension, the `texvc` tool needs to be compiled using `ocaml`.
 After that run
 
     php myMediaWiki/maintenance/update.php
-    
+
 to update the MediaWiki database for that extension.
