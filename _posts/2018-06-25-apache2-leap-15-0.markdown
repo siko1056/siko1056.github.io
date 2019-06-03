@@ -139,8 +139,8 @@ Fortunately, these days one has not to pay to be able to use the HTTPS protocol,
 To setup a [Mediawiki](https://www.mediawiki.org/) one can basically follow the [installation guide](https://www.mediawiki.org/wiki/Installation).
 Additionally, the following extensions should be installed:
 
-- https://www.mediawiki.org/wiki/Extension:MobileFrontend
-- https://www.mediawiki.org/wiki/Extension:Math
+- <https://www.mediawiki.org/wiki/Extension:MobileFrontend>
+- <https://www.mediawiki.org/wiki/Extension:Math>
 
 With openSUSE Leap, the following extra packages are useful to be installed for all the above:
 
