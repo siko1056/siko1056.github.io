@@ -6,34 +6,39 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://siko1056.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
-facebook_username: siko1056
-github_username: siko1056
-linkedin_username: siko1056
-youtube_username: siko1056
-rss: rss
+#facebook_username: siko1056
+#github_username: siko1056
+#linkedin_username: siko1056
+#youtube_username: siko1056
+#rss: rss
 
 # Build settings
-markdown: kramdown
-theme: minima
-paginate: 4
-show_excerpts: true
+#markdown: kramdown
+#theme: minima
+#paginate: 4
+#show_excerpts: true
 
 # For Minima 3.0+
-minima:
-  social_links:
-    facebook: siko1056
-    github: siko1056
-    linkedin: siko1056
-    youtube: siko1056
-    rss: rss
+#minima:
+#  social_links:
+#    facebook: siko1056
+#    github: siko1056
+#    linkedin: siko1056
+#    youtube: siko1056
+#    rss: rss
 
-plugins:
-   - jekyll-mentions
-   - jemoji
-   - jekyll-redirect-from
-   - jekyll-paginate
-   - jekyll-sitemap
-   - jekyll-feed
+#plugins:
+#   - jekyll-mentions
+#   - jemoji
+#   - jekyll-redirect-from
+#   - jekyll-paginate
+#   - jekyll-sitemap
+#   - jekyll-feed
 exclude:
   - Gemfile
   - Gemfile.lock
+  - src
+  - _posts
+  - about.md
+  - LICENSE
+  - README.md
