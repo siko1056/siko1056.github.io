@@ -6,10 +6,7 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://siko1056.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
-facebook_username: siko1056
 github_username: siko1056
-linkedin_username: siko1056
-youtube_username: siko1056
 rss: rss
 
 # Build settings
@@ -21,10 +18,7 @@ show_excerpts: true
 # For Minima 3.0+
 minima:
   social_links:
-    facebook: siko1056
     github: siko1056
-    linkedin: siko1056
-    youtube: siko1056
     rss: rss
 
 plugins:
