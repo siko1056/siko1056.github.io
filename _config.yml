@@ -1,25 +1,38 @@
-title: siko1056's website
+title: Kai Torben Ohlhus
 author: Kai Torben Ohlhus
 email: k.ohlhus@gmail.com
+github: siko1056
 description: > # this means to ignore newlines until "baseurl:"
-  Yet another blog about stuff I do.
+  Some blog about stuff I do.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://siko1056.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
-github_username: siko1056
-rss: rss
-
-# Build settings
 markdown: kramdown
-theme: minima
-paginate: 4
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+paginate: 5
 show_excerpts: true
 
-# For Minima 3.0+
-minima:
-  social_links:
-    github: siko1056
-    rss: rss
+sass:
+    style: compressed
+    sass_dir: _sass
+
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
+
+nav:
+ - name: "Blog"
+   link: "/"
+# - name: "Resume"
+#   link: "/resume"
+ - name: "Contact"
+   link: "/contact"
 
 plugins:
    - jekyll-mentions
@@ -28,6 +41,7 @@ plugins:
    - jekyll-paginate
    - jekyll-sitemap
    - jekyll-feed
+
 exclude:
   - Gemfile
   - Gemfile.lock
