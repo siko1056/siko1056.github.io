@@ -4,6 +4,8 @@ title:  "Setting up an apache2 webserver on openSUSE Leap 15.0"
 date: 2018-06-25
 modified_date: 2019-06-03
 categories: blog
+tags:
+  - software
 ---
 
 The goal of this blog post is to properly remember what I did to create my root-server setup using [openSUSE Leap 15.0](https://software.opensuse.org/distributions/leap):

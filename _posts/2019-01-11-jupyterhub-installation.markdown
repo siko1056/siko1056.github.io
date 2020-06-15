@@ -3,6 +3,8 @@ layout: post
 title:  "Setting up JupyterHub on openSUSE Leap 15.0"
 date: 2019-01-11
 categories: blog
+tags:
+  - software
 ---
 
 In a [previous blog post]({{ site.baseurl }}{% post_url 2018-06-25-apache2-leap-15-0 %})

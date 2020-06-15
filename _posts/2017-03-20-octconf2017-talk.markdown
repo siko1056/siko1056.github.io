@@ -3,6 +3,9 @@ layout: post
 title:  "Talk at the OctConf 2017 at CERN"
 date:   2017-03-20
 categories: blog
+tags:
+  - octave
+  - talks
 ---
 
 The slides of today's talk at the

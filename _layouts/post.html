@@ -1,6 +1,15 @@
 ---
 layout: default
 ---
+
+{% assign sortedtags = page.tags | sort %}
+<div>
+Tags:
+{% for tag in sortedtags reversed %}
+  <a href="/tags/{{ tag }}">#{{ tag }}</a>&nbsp;
+{% endfor %}
+</div>
+
 <article itemscope itemtype="http://schema.org/BlogPosting">
 
   <header>

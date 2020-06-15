@@ -3,6 +3,8 @@ layout: post
 title:  "Getting to know the MediaWiki API"
 date:   2017-03-10
 categories: blog
+tags:
+  - software
 ---
 
 This article is a short introduction to the
