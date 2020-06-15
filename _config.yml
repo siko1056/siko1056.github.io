@@ -6,6 +6,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Some blog about stuff I do.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://siko1056.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+lang: en
 
 markdown: kramdown
 highlighter: rouge
@@ -14,7 +15,9 @@ kramdown:
   syntax_highlighter: rouge
 
 paginate: 5
-show_excerpts: true
+
+feed:
+  excerpt_only: true
 
 sass:
     style: compressed
