@@ -2,6 +2,7 @@
 layout: post
 title:  "Talk at the OctConf 2017 at CERN"
 date:   2017-03-20
+modified_date: 2020-06-15
 categories: blog
 tags:
   - octave
@@ -11,7 +12,7 @@ tags:
 The slides of today's talk at the
 [OctConf2017](http://wiki.octave.org/OctConf_2017)
 at [CERN](https://indico.cern.ch/event/609833/timetable/#20170320.detailed)
-are available [here](https://github.com/siko1056/OctConf2017).
+are available [here](https://github.com/octave-de/OctConf2017).
 
 The talk was about GNU Octave's
 [publish](https://www.gnu.org/software/octave/doc/interpreter/XREFpublish.html)
