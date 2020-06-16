@@ -23,12 +23,6 @@ sass:
     style: compressed
     sass_dir: _sass
 
-defaults:
-  - scope:
-      path: "assets/img"
-    values:
-      image: true
-
 nav:
  - name: "Blog"
    link: "/"
