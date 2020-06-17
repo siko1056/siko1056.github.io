@@ -4,7 +4,7 @@ title:  "Can git and Mercurial work together?"
 date: 2020-06-17
 categories: blog
 tags:
-  - software
+  - octave
 ---
 
 Many popular source code hosting services do not support
