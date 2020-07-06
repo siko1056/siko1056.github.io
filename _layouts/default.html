@@ -11,7 +11,7 @@
         <meta http-equiv="refresh" content="5; url=/">
     {%- endif -%}
     {%- if page.date -%}
-        {%- assign desc = page.excerpt | xml_escape -%}
+        {%- assign desc = page.excerpt | strip_html -%}
     {%- else -%}
         {%- assign desc = site.description -%}
     {%- endif -%}
