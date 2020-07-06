@@ -3,6 +3,7 @@ layout: post
 title:  "Can git and Mercurial work together?"
 date: 2020-06-17
 categories: blog
+image: /assets/blog/2020-06-17_gitlab_export_patch.png
 tags:
   - octave
 ---

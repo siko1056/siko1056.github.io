@@ -2,36 +2,40 @@
 layout: post_list
 ---
 
-{% for post in paginator.posts %}
+{%- for post in paginator.posts -%}
 <h3 style="margin-top: 30px;">
   ({{ post.date | date: "%Y-%m-%d" }})
   <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
 </h3>
-<div style="padding-left: 20px;">{{ post.excerpt }}</div>
-{% endfor %}
+<div style="padding-left: 20px;">
+{%- if post.image %}
+<img alt="img" src="{{ post.image }}" class="list">
+{%- endif -%}
+{{ post.excerpt }}</div>
+{%- endfor -%}
 
-{% if paginator.total_pages > 1 %}
+{%- if paginator.total_pages > 1 -%}
 <div class="pagination">
-  {% if paginator.previous_page %}
+  {%- if paginator.previous_page -%}
     <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
-  {% else %}
+  {%- else -%}
     <span>&laquo; Prev</span>
-  {% endif %}
+  {%- endif -%}
 
-  {% for page in (1..paginator.total_pages) %}
-    {% if page == paginator.page %}
+  {%- for page in (1..paginator.total_pages) -%}
+    {%- if page == paginator.page -%}
       <em>{{ page }}</em>
-    {% elsif page == 1 %}
+    {%- elsif page == 1 -%}
       <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
-    {% else %}
+    {%- else -%}
       <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-    {% endif %}
-  {% endfor %}
+    {%- endif -%}
+  {%- endfor -%}
 
-  {% if paginator.next_page %}
+  {%- if paginator.next_page -%}
     <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
-  {% else %}
+  {%- else -%}
     <span>Next &raquo;</span>
-  {% endif %}
+  {%- endif -%}
 </div>
-{% endif %}
+{%- endif -%}

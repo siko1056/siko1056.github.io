@@ -84,6 +84,15 @@ img {
     border: 1px solid black;
 }
 
+img.list {
+    float: left;
+    display: block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    max-width: 100px;
+    max-height: 100px;
+}
+
 /* Mobile */
 
 @media (max-width: 800px) {

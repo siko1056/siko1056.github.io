@@ -20,22 +20,26 @@ Filter Tags:
 
 <div class="home">
 
-{% if site.posts.size > 0 %}
+{%- if site.posts.size > 0 -%}
 <h2>{{ page.post_list_tag | capitalize | default: "All" }} Blog Posts</h2>
 
-{% comment %}
+{%- comment -%}
 If page.post_list_tag is given, just show all articles belonging to that tag.
 Otherwise do pagination in `index.html`
-{% endcomment %}
-{% if page.post_list_tag %}
+{%- endcomment -%}
+{%- if page.post_list_tag %}
   {% for post in site.tags[page.post_list_tag] %}
   <h3 style="margin-top: 30px;">
     ({{ post.date | date: "%Y-%m-%d" }})
     <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
   </h3>
-  <div style="padding-left: 20px;">{{ post.excerpt }}</div>
-  {% endfor %}
-{% endif %}
+  <div style="padding-left: 20px;">
+  {%- if post.image %}
+  <img alt="img" src="{{ post.image }}" class="list">
+  {%- endif -%}
+  {{ post.excerpt }}</div>
+  {%- endfor -%}
+{%- endif -%}
 
 {{ content }}
 
