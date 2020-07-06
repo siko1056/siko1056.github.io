@@ -1,83 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <title>{{ page.title | default: site.title }}</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="blog, accent, {{ site.author }}, {{ site.title }}, jekyll">
+    <meta name="keywords" content="blog, {{ site.author }}, {{ page.tags | join: ', ' }}, jekyll">
     <meta name="author" content="{{ site.author }}">
-    {% if page.url == "/404.html" %}
+    {%- if page.url == "/404.html" -%}
         <meta http-equiv="refresh" content="5; url=/">
-    {% endif %}
-    {% if page.description %}
-        {% assign desc = page.description %}
-    {% else %}
-        {% assign desc = site.description %}
-    {% endif %}
-    {% if page.url %}
-        {% assign url = site.url | append: site.baseurl | append: page.url %}
-    {% else %}
-        {% assign url = site.url | append: site.baseurl | append: page.url %}
-    {% endif %}
+    {%- endif -%}
+    {%- if page.date -%}
+        {%- assign desc = page.excerpt | xml_escape -%}
+    {%- else -%}
+        {%- assign desc = site.description -%}
+    {%- endif -%}
+    {%- assign url = site.url | append: site.baseurl | append: page.url -%}
     <meta name="description" content="{{ desc }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS" href="/feed.xml" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
-    {% if site.favicon %}
+    {%- if site.favicon -%}
         <link rel="icon" type="image/ico" href="{{ site.favicon_location }}">
         <link rel="shortcut-icon" type="image/ico" href="{{ site.favicon_location }}">
-    {% endif %}
-    {% if site.twitter_username %}
-        <link rel="author" href="https://twitter.com/{{ site.twitter_username }}">
-    {% endif %}
+    {%- endif -%}
+
     <!-- Facebook Open Graph -->
     <meta name="og:description" content="{{ desc }}">
-    <meta name="og:title" content="{{ site.title }}">
+    <meta name="og:site_name" content="{{ site.title }}">
+    <meta name="og:title" content="{{ page.title | default: site.title }}">
     <meta name="og:url" content="{{ url }}">
     <meta name="og:type" content="article">
-    {% if site.og_image %}
-        <meta name="og:image" content="{{ site.og_image }}">
-    {% endif %}
-    {% if site.facebook_id %}
-        <meta name="fb:admins" content="{{ site.facebook_id }}">
-    {% endif %}
+    <meta name="og:image" content="{{ page.image | default: site.image | prepend: site.url }}">
+    {%- if page.date -%}
+    <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />
+    {%- endif -%}
+    {%- if page.modified_date -%}
+    <meta property="article:modified_time" content="{{ page.modified_date | date_to_xmlschema }}" />
+    {%- endif -%}
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{ site.title }}">
+    <meta name="twitter:title" content="{{ page.title | default: site.title }}">
     <meta name="twitter:description" content="{{ desc }}">
     <meta name="twitter:url" content="{{ url }}">
-    {% if site.twitter_image %}
-        <meta name="twitter:image" content="{{ site.twitter_image }}">
-    {% else %}
-        <meta name="twitter:image" content="{{ site.profile_picture }}">
-    {% endif %}
+    <meta name="twitter:image" content="{{ page.image | default: site.image | prepend: site.url }}">
 </head>
 <body>
     <div class="wrapper">
         <div class="navbar container">
             <a id="author-name" class="alignable pull-left" href="{{ site.url }}">{{ site.title }}</a>
             <ul id="navlist" class="alignable pull-right navbar-ul">
-                {% for x in site.nav %}
+                {%- for x in site.nav -%}
                     <li class="alignable pull-left nav-list"><a href="{{ x.link }}">{{ x.name }}</a>
-                    {% if forloop.last == false %}
-                        /
-                    {% endif %}
+                    {%- if forloop.last == false -%}
+                        &nbsp;/
+                    {%- endif -%}
                         </li>
-                {% endfor %}
+                {%- endfor -%}
             </ul>
         </div>
         <div style="clear:both; font-size: 14pt;" class="container">
-        {% if site.github %}
+        {%- if site.github -%}
             <a href="https://github.com/{{ site.github }}">@{{ site.github }}</a>
-        {% endif %}
+        {%- endif -%}
         </div>
         <hr>
-        {% if page.is_contact == true %}
+        {%- if page.is_contact == true -%}
             <div class="container content contact">
-        {% else %}
+        {%- else -%}
             <div class="container content">
-        {% endif %}
+        {%- endif -%}
                 {{ content }}
                 <hr />
                 <p style="text-align:center; padding-bottom:1em;">

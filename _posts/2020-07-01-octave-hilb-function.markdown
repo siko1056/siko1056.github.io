@@ -3,6 +3,7 @@ layout: post
 title:  "Boosting the Octave `hilb` function"
 date: 2020-07-01
 categories: blog
+image: /assets/blog/2020-07-01-octave-hilb-function.png
 tags:
   - octave
 ---
