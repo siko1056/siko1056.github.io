@@ -43,9 +43,9 @@ The basic workflow for the last major Octave 5.1 release was as follows:
 
 As mentioned before, the
 [Octave 6.1 release](https://wiki.octave.org/6.1_Release_Checklist) got stuck
-and I tried to summarize some problems of the current release process
-from the perspective of a totally uninvolved volunteer trying to release Octave
-on his own for the first time.
+and I tried to summarize some problems of the current release process.
+The description is from the perspective of a totally uninvolved volunteer
+trying to release Octave on his own for the first time.
 
 ### 2.1 Lack of knowledge
 
@@ -85,8 +85,8 @@ for the following permissions:
 - Must be able to upload files to <https://alpha.gnu.org/gnu/octave/> and
   <https://ftp.gnu.org/gnu/octave>.
 - Needs to add new versions to the
-  [Octave bug tracker at savannah](https://savannah.gnu.org/bugs/?group=octave).
-  
+  [Octave bug tracker at Savannah](https://savannah.gnu.org/bugs/?group=octave).
+
 ### 2.3 Lack of transparency
 
 If the volunteer (or even jwe) succeeds to create the release tarballs,
@@ -123,16 +123,16 @@ The key ideas are far from new:
 
 The key idea here is to get rid of the **permission problem**
 to increase the frequency of building release candidates (RC) before a release.
-The Buildbot Master to defines the release infrastructure:
+The Buildbot Master defines the release infrastructure:
 
-- The Octave repository to release from can be altered by the Buildbot Master
+- The Octave repository (to release from) can be altered by the Buildbot Master
   and is documented in the build logs.
 - No need to store the release tarballs on <https://alpha.gnu.org/gnu/octave/>.
 - The **Mercurial ID becomes the major Octave release identifier**,
   not some artificial manual applied version (e.g. Octave 6.0.1).
 
 > **The idea is not to get rid of Octave versions entirely.**
-> The observation is that adapting those numbers manually is tedious
+> The observation is that updating those numbers manually is tedious
 > (updating the Octave and mxe-octave repository is involved)
 > and leads to more confusion compared to an unique Mercurial ID.
 
@@ -149,7 +149,7 @@ For the Octave 5.2.0 release, I used
 to create the desired Octave builds and to preserve the logs for my
 [octave.space](https://octave.space) website.
 That was too troublesome at some point (the complexity grew fast)
-and didn't look "good" compared to Buildbot.
+and did not look "good" compared to Buildbot.
 Thus, why painfully reinventing the wheel,
 if Buildbot offers all demanded features in a good looking environment?
 
@@ -160,7 +160,7 @@ if Buildbot offers all demanded features in a good looking environment?
 > [Buildbot worker](https://github.com/siko1056/octave-buildbot/tree/master/worker)
 > on his (unused) machine!
 
-Ever tried to compile Octave on CentOS 7 naively?
+Ever tried to compile Octave on CentOS 7?
 It is possible, but compared to a recent Ubuntu or Debian,
 you have to manually provide many tools and libraries yourself.
 Especially, if the machine is not run by you,
@@ -186,7 +186,7 @@ The current state of the project is:
   [a single local machine](https://github.com/siko1056/octave-buildbot/tree/master/test)
   or distributed to a webserver and several PCs
   (see <https://buildbot.octave.space>).
-- The Octave release tarballs and documentation are build
+- The Octave release tarballs and documentation are built
   and sent to the Master.
 
 What is missing?
@@ -198,7 +198,7 @@ What is missing?
 
 The final suggestion from section 3.2 is to make the Mercurial ID the only
 necessary release candidate identifier.
-For mxe-octave this means that only 
+For mxe-octave this means that only
 [`stable-octave.mk`](https://hg.octave.org/mxe-octave/file/9b74815e8337/src/stable-octave.mk)
 will be used, not
 [`release-octave.mk`](https://hg.octave.org/mxe-octave/file/9b74815e8337/src/release-octave.mk).
