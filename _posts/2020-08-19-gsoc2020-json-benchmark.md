@@ -2,6 +2,7 @@
 layout: post
 title:  "Support for the JSON data format after GSoC 2020"
 date: 2020-08-19
+modified_date: 2020-08-29
 categories: blog
 image: /assets/blog/2020-08-19-gsoc2020-json-benchmark_32_0.png
 tags:
@@ -260,10 +261,15 @@ rmpath ('jsonlab')
 
 ## Benchmark results
 
+> **Update 2020-08-29**:
+> [Abdallah found out](https://github.com/Abdallah-Elshamy/octave/issues/12#issuecomment-680052363)
+> that the speed problem (described blow) was the call to
+> [matlab.lang.makeValidName](https://www.octave.org/doc/v5.2.0/XREFmatlab_005flang_005fmakeValidName.html)
+> not the chosen DOM API.
 
 ```matlab
 graphics_toolkit ('qt')
-titles = {'citm\_catalog.json (2 MB, mixed)',
+titles = {'citm\_catalog.json (2 MB, mixed)', ...
           'canada.json (2 MB, numeric)', ...
           'large-file.json (26 MB, mixed)'};
 ```
@@ -301,12 +307,14 @@ end
 [![png](/assets/blog/2020-08-19-gsoc2020-json-benchmark_33_0.png)](/assets/blog/2020-08-19-gsoc2020-json-benchmark_33_0.png)
 
 
-The results are not as overwhelming as I initially hoped for.
+<strike>The results are not as overwhelming as I initially hoped for.</strike>
+(See comment above.)
 The first figure compares the running times of **Matlab**, **Octave**, and
 **octave-rapidjson**.
 As both **Octave** and **octave-rapidjson** are based on RapidJSON,
-it must be the choice of the API (DOM vs. SAX) that slows down the current
-Octave implementation (DOM) by a factor of 10 to 100.
+<strike>it must be the choice of the API (DOM vs. SAX)
+that slows down the current Octave implementation (DOM)
+by a factor of 10 to 100</strike> (see comment above).
 **octave-rapidjson**, using the SAX API,
 is for the mixed data case not slower than Matlab.
 But the implementation itself is less Matlab compatible than the current
@@ -329,6 +337,6 @@ GSoC 2020 is over,
 but regarding this benchmark Octave should seriously consider switching
 to the SAX API and additionally preserve the current Matlab compatibility.
 
-> August 19, 2020 (Version 1)
+> August 29, 2020 (Version 2)
 >
 > Download the [Jupyter Notebook](https://siko1056.github.io/assets/jupyter/2020-08-19-gsoc2020-json-benchmark.ipynb).
