@@ -264,7 +264,7 @@ rmpath ('jsonlab')
 > **Update 2020-08-29**:
 > [Abdallah found out](https://github.com/Abdallah-Elshamy/octave/issues/12#issuecomment-680052363)
 > that the speed problem (described blow) was the call to
-> [matlab.lang.makeValidName](https://www.octave.org/doc/v5.2.0/XREFmatlab_005flang_005fmakeValidName.html)
+> [`matlab.lang.makeValidName`](https://www.octave.org/doc/v5.2.0/XREFmatlab_005flang_005fmakeValidName.html)
 > not the chosen DOM API.
 
 ```matlab
@@ -307,14 +307,17 @@ end
 [![png](/assets/blog/2020-08-19-gsoc2020-json-benchmark_33_0.png)](/assets/blog/2020-08-19-gsoc2020-json-benchmark_33_0.png)
 
 
-<strike>The results are not as overwhelming as I initially hoped for.</strike>
-(See comment above.)
+<strike>The results are not as overwhelming as I initially hoped for</strike>
+(they are, see comment above.)
+
 The first figure compares the running times of **Matlab**, **Octave**, and
 **octave-rapidjson**.
-As both **Octave** and **octave-rapidjson** are based on RapidJSON,
-<strike>it must be the choice of the API (DOM vs. SAX)
+Both **Octave** and **octave-rapidjson** are based on RapidJSON.
+
+<strike>It must be the choice of the API (DOM vs. SAX)
 that slows down the current Octave implementation (DOM)
-by a factor of 10 to 100</strike> (see comment above).
+by a factor of 10 to 100</strike> (wrong, see comment above).
+
 **octave-rapidjson**, using the SAX API,
 is for the mixed data case not slower than Matlab.
 But the implementation itself is less Matlab compatible than the current
@@ -333,9 +336,18 @@ as the running times are significantly larger than those of the first figure.
 For **octave-jsonstuff** we could due to an error not obtain any results.
 I'll inform the maintainer to hopefully in the future repeat this benchmark.
 
+<strike>
+Regarding this benchmark Octave should seriously consider switching
+to the SAX API and additionally preserve the current Matlab compatibility
+</strike> (see comment above).
+
 GSoC 2020 is over,
-but regarding this benchmark Octave should seriously consider switching
-to the SAX API and additionally preserve the current Matlab compatibility.
+and Abdallah enriched Octave with a great new feature.
+When he (or someone else) ports the Octave function
+[`matlab.lang.makeValidName`](https://www.octave.org/doc/v5.2.0/XREFmatlab_005flang_005fmakeValidName.html)
+to the C++ language,
+the performance of JSON decoding and encoding is great
+and compatible to Matlab.
 
 > August 29, 2020 (Version 2)
 >
