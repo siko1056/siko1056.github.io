@@ -2,6 +2,7 @@
 layout: post
 title:  "octave-buildbot: Less painful Octave releases?"
 date: 2020-08-17
+modified_date: 2020-09-09
 categories: blog
 image: /assets/blog/2020-08-17_octave_buildbot.png
 tags:
@@ -145,7 +146,7 @@ was build, even though the release is labeled `6.0.1` for eight months.
 ### 3.3 Why Buildbot?
 
 For the Octave 5.2.0 release, I used
-[some bash scripts](https://github.com/siko1056/OctaveCD)
+[some bash scripts](https://github.com/gnu-octave/OctaveCD)
 to create the desired Octave builds and to preserve the logs for my
 [octave.space](https://octave.space) website.
 That was too troublesome at some point (the complexity grew fast)
@@ -157,7 +158,7 @@ if Buildbot offers all demanded features in a good looking environment?
 
 > Having Docker installed, **EVERYBODY can help testing/releasing Octave**
 > by running a
-> [Buildbot worker](https://github.com/siko1056/octave-buildbot/tree/master/worker)
+> [Buildbot worker](https://github.com/gnu-octave/octave-buildbot/tree/master/worker)
 > on his (unused) machine!
 
 Ever tried to compile Octave on CentOS 7?
@@ -170,20 +171,20 @@ you are happy if nobody ever touches your self-compiled Octave once it succeeds.
 This is of course far from reproducible or reliable.
 Using Docker,
 your virtual system (for building Octave) is defined by a
-[single Dockerfile](https://github.com/siko1056/octave-buildbot/blob/70266b8c46a87c80c46aad0676f8e60675d0a60e/worker/Dockerfile)
+[single Dockerfile](https://github.com/gnu-octave/octave-buildbot/blob/70266b8c46a87c80c46aad0676f8e60675d0a60e/worker/Dockerfile)
 and started with a few commands.
 
 ## 4 Summary and outlook
 
 The project goal of
-[*octave-buildbot*](https://github.com/siko1056/octave-buildbot/)
+[*octave-buildbot*](https://github.com/gnu-octave/octave-buildbot/)
 is that everybody should be able to build/release Octave
 using a fully documented, reproducible Docker environment running Buildbot.
 
 The current state of the project is:
 
 - Buildbot Master and Server can be run on
-  [a single local machine](https://github.com/siko1056/octave-buildbot/tree/master/test)
+  [a single local machine](https://github.com/gnu-octave/octave-buildbot/tree/master/test)
   or distributed to a webserver and several PCs
   (see <https://buildbot.octave.space>).
 - The Octave release tarballs and documentation are built
@@ -191,9 +192,10 @@ The current state of the project is:
 
 What is missing?
 
-- Building Doxygen: Ideas how to faster send the 2 GB of Doxygen
-  to the Buildbot Master.
-- Implementing the MXE builds, lack of time so far.
+- <strike>Building Doxygen</strike>
+- Better ideas how to faster send the 2 GB Doxygen zip-file to the Buildbot Master
+  and where to store the builds for longer time.
+- <strike>Implementing the MXE builds, lack of time so far.</strike>
 - Interested developers supporting my efforts.
 
 The final suggestion from section 3.2 is to make the Mercurial ID the only
