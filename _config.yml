@@ -3,7 +3,7 @@ author: Kai Torben Ohlhus
 email: k.ohlhus@gmail.com
 github: siko1056
 image: /assets/img/kai_ohlhus.jpg
-description: > # this means to ignore newlines until "baseurl:"
+description: >- # this means to ignore newlines until "baseurl:"
   Some blog about my free/libre and open-source software
   projects and public talks (topics: GNU Octave, Linux, etc.).
 baseurl: "" # the subpath of your site, e.g. /blog
