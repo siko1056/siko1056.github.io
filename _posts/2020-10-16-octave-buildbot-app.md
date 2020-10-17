@@ -2,6 +2,7 @@
 layout: post
 title:  "Fresh brewed Octave - every day!"
 date: 2020-10-16
+modified_date: 2020-10-17
 categories: blog
 image: /assets/blog/2020-10-16_buildbot_octave_space_icon.png
 tags:
@@ -62,7 +63,7 @@ that the GNU Octave user manual and Doxygen documentation
 can directly be viewed online to find potential flaws in them.
 
 
-## Trust me, I'm a Buildbot worker
+## Trust me, I'm a Buildbot Worker
 
 Especially, when automation and many systems are in the game,
 there should be a way to make sure, that the final installer downloaded from
@@ -78,13 +79,13 @@ is displayed in the Buildbot Workers build log.
 </a>
 
 Admittedly, it is a little clumsy to find those hashes.
-Their main purpose can be seen to check for damaged
+Their main purpose can be seen as check for damaged
 or incompletely copied installer files to exclude sources of errors.
 
 Speaking of errors,
 for the heavy weighting mxe-octave builds,
 even in the event of a build error the valuable log files are compressed
-and copied to the Buildbot Master anyways.
+and copied to the Buildbot Master.
 Because of this, there might sometimes be more than only one build log
 for a particular mxe-octave build available.
 They can be distinguished by the build number suffix.
@@ -139,22 +140,24 @@ can run in parallel after "octave-stable" finished successfully.
 A single Worker would need 50 hours for all Octave release tasks
 and the goal of one release per day would be out of reach.
 
-According to the table and footnote [1],
+According to Table 1 and footnote [1],
 each Buildbot Worker must provide in worst case **about 75 GB** of disk space.
 
 ### Buildbot Master resources
 
-In contrast to the Workers, that Master only has to serve the build artifacts
-and coordinate the Workers which does not require much "computational power".
+In contrast to the Workers, the Master only has to serve the build artifacts
+and coordinate the tasks run by the Workers.
+This does not require much "computational power".
 
-Nevertheless, storing all build artifacts requires **9 GB** per GNU Octave
-stable release.  Note that the Doxygen documentation is unpacked for online
-inspection, for example.
+Nevertheless,
+storing all build artifacts requires **9 GB** per GNU Octave stable release.
+Note that the Doxygen documentation is unpacked for online inspection,
+for example.
 
-The current setup of https://octave.space assigns 65 GB in total to store
+The current setup of <https://octave.space> assigns 65 GB in total to store
 Octave releases.
 This means roughly the last seven Octave releases are available
-and get automatically deleted once a new Octave release starts.
+and get automatically deleted once a new Octave release build starts.
 
 ## Open issues, if you want to jump in
 
@@ -166,8 +169,8 @@ but those do not disturb the release process significantly (workarounds exist).
 
 - [More efficient use of ccache.](https://github.com/gnu-octave/octave-buildbot/issues/2)
 - [Speed up the file transfers.](https://github.com/gnu-octave/octave-buildbot/issues/5)
-  - Fun fact: Because of my limited resources (money).
-    The server is located in Germany, while the great Workers are in Japan.
+  - Fun fact: Because of my limited resources (money)
+    the server is located in Germany, while the great Workers are in Japan.
 - [Library issue with two of four Workers.](https://github.com/gnu-octave/octave-buildbot/issues/6)
 - [Podman related deletion problem.](https://github.com/gnu-octave/octave-buildbot/issues/7)
 
