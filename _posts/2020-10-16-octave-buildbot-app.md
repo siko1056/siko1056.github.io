@@ -2,7 +2,7 @@
 layout: post
 title:  "Fresh brewed Octave - every day!"
 date: 2020-10-16
-modified_date: 2020-10-17
+modified_date: 2020-11-08
 categories: blog
 image: /assets/blog/2020-10-16_buildbot_octave_space_icon.png
 tags:
@@ -106,6 +106,9 @@ In the current setup
 each Worker is expected to provide 4 CPUs.
 This value can of course be adjusted.
 
+> **Note:** See
+> [a newer blog post]({% post_url 2020-11-08-octave-buildbot-boosted %})
+> for significant improvements.
 
 Builder name | build time | upload time | build space [1] | artifact size
 | --- |
