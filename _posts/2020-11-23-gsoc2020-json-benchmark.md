@@ -1,42 +1,35 @@
 ---
 layout: post
-title:  "Support for the JSON data format after GSoC 2020"
-date: 2020-08-19
-modified_date: 2020-11-23
+title:  "Update: Support for the JSON data format after GSoC 2020"
+date: 2020-11-23
 categories: blog
-image: /assets/blog/2020-08-19-gsoc2020-json-benchmark_32_0.png
+image: /assets/blog/2020-11-23-gsoc2020-json-benchmark_32_0.png
 tags:
   - octave
 ---
 
 The [Google Summer of Code (GSoC) 2020](https://summerofcode.withgoogle.com/)
-will end with this August.
-I had the pleasure to mentor
-[Abdallah Elshamy](https://abdallahshamy.wordpress.com/)
-working on the implementation of the `jsondecode()` and `jsonencode()`
-functions for Octave.
-These function allow to convert [JSON data](https://en.wikipedia.org/wiki/JSON)
-strings to Octave Objects and vice versa.
+is over and I had the pleasure to mentor
+[Abdallah Elshamy](https://abdallahshamy.wordpress.com/),
+who enriched Octave with the `jsondecode()` and `jsonencode()` functions.
+A remaining issue was the translation of the Octave function
+[`matlab.lang.makeValidName`](https://www.octave.org/doc/v5.2.0/XREFmatlab_005flang_005fmakeValidName.html)
+to the C++ language.
+This is now accomplished and the overall results are great.
 
-> See [the new benchmark of this Jupyter Notebook](https://siko1056.github.io/blog/2020/11/23/gsoc2020-json-benchmark.html)
-> (November 23, 2020) with `matlab.lang.makeValidName` as C++ code.
+> See [the previous benchmark of this Jupyter Notebook](https://siko1056.github.io/blog/2020/08/19/gsoc2020-json-benchmark.html)
+> (August 19, 2020) with `matlab.lang.makeValidName` as Octave code.
 
-Last week
-[we pushed most of Abdallah's work](https://hg.savannah.gnu.org/hgweb/octave/rev/5da49e37a6c9)
-to the main Octave repository,
-but he is still working on the functions
-and hopefully still after GSoC 2020 is over.
-Now as it is very convenient to use the JSON functions,
-I gave them a try with larger JSON data.
-Some of the test cases I collected from the excellent
+Again a larger JSON data set was used,
+with test cases collected from the excellent
 [nativejson-benchmark](https://github.com/miloyip/nativejson-benchmark),
 but with focus on Octave.
-Another
-[test by Abdallah](https://lists.gnu.org/archive/html/octave-maintainers/2020-06/msg00112.html)
-has been carried out in June to test the compatibility for Matlab.
 
 Only the running times for reading and writing JSON data
 are regarded in this benchmark.
+Another
+[test by Abdallah](https://lists.gnu.org/archive/html/octave-maintainers/2020-06/msg00112.html)
+has been carried out in June to test the compatibility for Matlab.
 
 The test environment is a laptop with
 - [Intel(R) Core(TM) i7-8665U CPU @ 1.90GHz](https://ark.intel.com/content/www/us/en/ark/products/193563/intel-core-i7-8665u-processor-8m-cache-up-to-4-80-ghz.html)
@@ -52,7 +45,7 @@ octave_hg_id   = version ('-hgid')
 ```
 
     octave_version = 7.0.0
-    octave_hg_id = 173807014259
+    octave_hg_id = 38e22065d9ec
 
 
 The following JSON extensions for Octave are under test.
@@ -264,11 +257,6 @@ rmpath ('jsonlab')
 
 ## Benchmark results
 
-> **Update 2020-08-29**:
-> [Abdallah found out](https://github.com/Abdallah-Elshamy/octave/issues/12#issuecomment-680052363)
-> that the speed problem (described blow) was the call to
-> [`matlab.lang.makeValidName`](https://www.octave.org/doc/v5.2.0/XREFmatlab_005flang_005fmakeValidName.html)
-> not the chosen DOM API.
 
 ```matlab
 graphics_toolkit ('qt')
@@ -291,7 +279,7 @@ end
 ```
 
 
-[![png](/assets/blog/2020-08-19-gsoc2020-json-benchmark_32_0.png)](/assets/blog/2020-08-19-gsoc2020-json-benchmark_32_0.png)
+[![png](/assets/blog/2020-11-23-gsoc2020-json-benchmark_32_0.png)](/assets/blog/2020-11-23-gsoc2020-json-benchmark_32_0.png)
 
 
 
@@ -307,51 +295,31 @@ end
 ```
 
 
-[![png](/assets/blog/2020-08-19-gsoc2020-json-benchmark_33_0.png)](/assets/blog/2020-08-19-gsoc2020-json-benchmark_33_0.png)
+[![png](/assets/blog/2020-11-23-gsoc2020-json-benchmark_33_0.png)](/assets/blog/2020-11-23-gsoc2020-json-benchmark_33_0.png)
 
-
-<strike>The results are not as overwhelming as I initially hoped for</strike>
-(they are, see comment above.)
 
 The first figure compares the running times of **Matlab**, **Octave**, and
 **octave-rapidjson**.
-Both **Octave** and **octave-rapidjson** are based on RapidJSON.
+Both **Octave** and **octave-rapidjson** are based on RapidJSON
+and perform in many cases better than the Matlab implementation.
 
-<strike>It must be the choice of the API (DOM vs. SAX)
-that slows down the current Octave implementation (DOM)
-by a factor of 10 to 100</strike> (wrong, see comment above).
-
-**octave-rapidjson**, using the SAX API,
-is for the mixed data case not slower than Matlab.
-But the implementation itself is less Matlab compatible than the current
-Octave implementation.
-The choice of DOM for the current Octave implementation was made to achieve
-best compatibility to Matlab.
-
-On the positive side,
-in the case of more numeric data (canada.json)
-the DOM API outperforms the SAX API.
-Nevertheless,
-my humble assumption is that mixed data is more common for JSON data files.
+**octave-rapidjson** is using the **SAX API** of RapidJSON,
+while the **new Octave implementation** uses the **DOM API**.
+This decision was made to achieve best compatibility to Matlab,
+which was in some cases difficult with the SAX API
+and is no pririty for the octave-rapidjson project.
+The results show,
+that both APIs perform similarly in the tested data sets,
+even though there is a claim,
+that [the SAX API is faster](https://rapidjson.org/md_doc_faq.html#autotoc_md70)
+in some cases.
 
 The results of **JSONio** and **jsonlab** are split into a second figure,
 as the running times are significantly larger than those of the first figure.
-For **octave-jsonstuff** we could due to an error not obtain any results.
-I'll inform the maintainer to hopefully in the future repeat this benchmark.
+For **octave-jsonstuff** we could due to an error not obtain any results
+and the [maintainer is informed](https://github.com/apjanke/octave-jsonstuff/issues/21)
+about it.
 
-<strike>
-Regarding this benchmark Octave should seriously consider switching
-to the SAX API and additionally preserve the current Matlab compatibility
-</strike> (see comment above).
-
-GSoC 2020 is over,
-and Abdallah enriched Octave with a great new feature.
-When he (or someone else) ports the Octave function
-[`matlab.lang.makeValidName`](https://www.octave.org/doc/v5.2.0/XREFmatlab_005flang_005fmakeValidName.html)
-to the C++ language,
-the performance of JSON decoding and encoding is great
-and compatible to Matlab.
-
-> August 29, 2020 (Version 2)
+> November 23, 2020 (Version 1)
 >
-> Download the [Jupyter Notebook](https://siko1056.github.io/assets/jupyter/2020-08-19-gsoc2020-json-benchmark.ipynb).
+> Download the [Jupyter Notebook](https://siko1056.github.io/assets/jupyter/2020-11-23-gsoc2020-json-benchmark.ipynb).
