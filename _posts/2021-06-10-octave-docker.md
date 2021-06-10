@@ -64,7 +64,11 @@ The Octave Docker images are created with several usage scenarios in mind.
 
   An installation script is provided,
   that can be called directly with this shell command:
-  ```
+  ```bash
+  ## Install
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/gnu-octave/docker/main/install.sh)" install -t singularity
+
+  ## Uninstall
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/gnu-octave/docker/main/install.sh)" install -t singularity
   ```
   It creates links in `$HOME/bin`,
@@ -164,7 +168,7 @@ there are options for customization:
 
 The easiest task is to add to the existing Octave Docker images.
 This can be done by a `Dockerfile`:
-```
+```Bash
 FROM  gnuoctave/octave:6.2.0
 LABEL maintainer="Your Name <e@mail.com>"
 
@@ -265,7 +269,7 @@ For information about changes from previous versions, type 'news'.
 
 >>
 ```
-As describe in the last section,
+As described in the last section,
 you are free to customize and publish Docker images
 building Octave 6 based upon the
 [docker.io/gnuoctave/octave-build:5](https://hub.docker.com/r/gnuoctave/octave-build)
