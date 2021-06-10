@@ -69,7 +69,7 @@ The Octave Docker images are created with several usage scenarios in mind.
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/gnu-octave/docker/main/install.sh)" install -t singularity
 
   ## Uninstall
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/gnu-octave/docker/main/install.sh)" install -t singularity
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/gnu-octave/docker/main/install.sh)" install -u -t singularity
   ```
   It creates links in `$HOME/bin`,
   as well as Desktop entries,
