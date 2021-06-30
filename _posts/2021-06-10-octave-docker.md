@@ -168,7 +168,7 @@ there are options for customization:
 
 The easiest task is to add to the existing Octave Docker images.
 This can be done by a `Dockerfile`:
-```Bash
+```bash
 FROM  gnuoctave/octave:6.2.0
 LABEL maintainer="Your Name <e@mail.com>"
 
