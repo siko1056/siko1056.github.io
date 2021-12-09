@@ -25,8 +25,8 @@ sass:
 nav:
  - name: "Blog"
    link: "/"
-# - name: "Resume"
-#   link: "/resume"
+ - name: "LinkedIn"
+   link: "https://www.linkedin.com/in/siko1056"
  - name: "Contact"
    link: "/contact"
 

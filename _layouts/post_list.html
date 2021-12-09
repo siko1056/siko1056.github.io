@@ -29,7 +29,7 @@ Otherwise do pagination in `index.html`
 {%- endcomment -%}
 {%- if page.post_list_tag %}
   {% for post in site.tags[page.post_list_tag] %}
-  <h3 style="margin-top: 30px;">
+  <h3 style="margin-top: 50px;">
     ({{ post.date | date: "%Y-%m-%d" }})
     <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
   </h3>

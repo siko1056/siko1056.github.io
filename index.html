@@ -3,7 +3,7 @@ layout: post_list
 ---
 
 {%- for post in paginator.posts -%}
-<h3 style="margin-top: 30px;">
+<h3 style="margin-top: 50px;">
   ({{ post.date | date: "%Y-%m-%d" }})
   <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
 </h3>
