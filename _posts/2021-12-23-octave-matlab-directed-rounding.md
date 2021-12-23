@@ -2,7 +2,7 @@
 layout: post
 title:  "Using directed rounding in Octave/Matlab"
 date:   2021-12-23
-image: /assets/blog/2021-12-23_title_slide.png
+image: /assets/blog/2021-12-23_mswin_octave_blas_small.png
 categories: blog
 tags:
   - octave
@@ -272,7 +272,7 @@ Download the file compiled
 [dynamic-link library (DLL)](https://en.wikipedia.org/wiki/Dynamic-link_library)
 for OpenBLAS:
 
-- [libopenblasFPCSR-0.3.18.dll]()
+- [libopenblasFPCSR-0.3.18.dll](/assets/blog/2021/libopenblasFPCSR-0.3.18.dll)
   Below the DLL-file creation is described.
 
 > For the next steps **administrator privileges** might be required.
