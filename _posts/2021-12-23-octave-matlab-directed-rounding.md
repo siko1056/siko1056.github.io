@@ -2,6 +2,7 @@
 layout: post
 title:  "Using directed rounding in Octave/Matlab"
 date:   2021-12-23
+modified_date: 2022-01-18
 image: /assets/blog/2021-12-23_mswin_octave_blas_small.png
 categories: blog
 tags:
@@ -355,6 +356,17 @@ ENV["CONSISTENT_FPCSR"] = "1"
 like in the screenshot below:
 
 [![macos_openblas](/assets/blog/2021-12-23_macos_openblas.png)](/assets/blog/2021-12-23_macos_openblas.png)
+
+> If you use a modern MacBook with **Apple M1 chip**,
+> you have to either
+> [patch the OpenBLAS](/assets/blog/2021/openblas-0.3.19-apple-m1.patch)
+> source code,
+> or change another two lines like in the screenshot above as follows:
+>
+> ```
+> url "https://github.com/siko1056/OpenBLAS/archive/refs/tags/v0.3.19-m1.tar.gz"
+> sha256 "6a0d40d641d877c27ef6325212f340f4a3e20d0122357e8fac76dd9ad2aee58d"
+> ```
 
 Finally run from the Terminal:
 ```

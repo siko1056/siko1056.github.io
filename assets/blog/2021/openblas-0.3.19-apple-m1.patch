@@ -1,0 +1,62 @@
+diff --git a/driver/others/blas_server.c b/driver/others/blas_server.c
+index fa07a1ea4..1f84944ac 100644
+--- a/driver/others/blas_server.c
++++ b/driver/others/blas_server.c
+@@ -440,9 +440,13 @@ blas_queue_t *tscq;
+ #endif
+
+ #ifdef CONSISTENT_FPCSR
++#ifdef __aarch64__
++      __asm__ __volatile__ ("msr fpcr, %0" : : "r" (queue -> sse_mode));
++#else
+       __asm__ __volatile__ ("ldmxcsr %0" : : "m" (queue -> sse_mode));
+       __asm__ __volatile__ ("fldcw %0"   : : "m" (queue -> x87_mode));
+ #endif
++#endif
+
+ #ifdef MONITOR
+       main_status[cpu] = MAIN_RUNNING1;
+@@ -716,9 +720,13 @@ int exec_blas_async(BLASLONG pos, blas_queue_t *queue){
+       queue -> position  = pos;
+
+ #ifdef CONSISTENT_FPCSR
++#ifdef __aarch64__
++      __asm__ __volatile__ ("mrs %0, fpcr" : "=r" (queue -> sse_mode));
++#else
+       __asm__ __volatile__ ("fnstcw %0"  : "=m" (queue -> x87_mode));
+       __asm__ __volatile__ ("stmxcsr %0" : "=m" (queue -> sse_mode));
+ #endif
++#endif
+
+ #if defined(OS_LINUX) && !defined(NO_AFFINITY) && !defined(PARAMTEST)
+
+diff --git a/driver/others/blas_server_omp.c b/driver/others/blas_server_omp.c
+index a576127aa..e6fe5d83a 100644
+--- a/driver/others/blas_server_omp.c
++++ b/driver/others/blas_server_omp.c
+@@ -282,8 +282,12 @@ static void exec_threads(blas_queue_t *queue, int buf_index){
+   sb = queue -> sb;
+
+ #ifdef CONSISTENT_FPCSR
++#ifdef __aarch64__
++  __asm__ __volatile__ ("msr fpcr, %0" : : "r" (queue -> sse_mode));
++#else
+   __asm__ __volatile__ ("ldmxcsr %0" : : "m" (queue -> sse_mode));
+   __asm__ __volatile__ ("fldcw %0"   : : "m" (queue -> x87_mode));
++#endif
+ #endif
+
+   if ((sa == NULL) && (sb == NULL) && ((queue -> mode & BLAS_PTHREAD) == 0)) {
+@@ -381,8 +385,12 @@ int exec_blas(BLASLONG num, blas_queue_t *queue){
+
+ #ifdef CONSISTENT_FPCSR
+   for (i = 0; i < num; i ++) {
++#ifdef __aarch64__
++    __asm__ __volatile__ ("mrs %0, fpcr" : "=r" (queue[i].sse_mode));
++#else
+     __asm__ __volatile__ ("fnstcw %0"  : "=m" (queue[i].x87_mode));
+     __asm__ __volatile__ ("stmxcsr %0" : "=m" (queue[i].sse_mode));
++#endif
+   }
+ #endif
+
