@@ -222,6 +222,7 @@ static void exec_threads(blas_queue_t *queue, int buf_index){
 
 Using this compile flag has already been suggested by
 [Masahide Kashiwagi](http://verifiedby.me/adiary/?q=CONSISTENT_FPCSR&all=1)
+(and [information on Apple M1 chips](http://verifiedby.me/adiary/0158))
 and by
 [INTLAB](https://www.tuhh.de/ti3/rump/intlab/Octave/INTLAB_for_GNU_Octave.shtml).
 
