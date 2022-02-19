@@ -155,4 +155,3 @@ logins.
 2. [Facebook](https://www.facebook.com/siko1056)
 3. [LinkedIn](https://www.linkedin.com/in/siko1056)
 4. [Twitter](https://twitter.com/siko1056)
-5. [XING](https://www.xing.com/profile/KaiTorben_Ohlhus)
