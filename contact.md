@@ -7,6 +7,8 @@ is_contact: true
 
 ## Email
 
+- [k.ohlhus@gmail.com](mailto:k.ohlhus@gmail.com)
+
 <details>
 <summary>PGP Public Key (ID: 0xBD46BBCE)</summary>
 <table>
@@ -118,10 +120,6 @@ KqOLv64ap59LBbiU931vdQ==
 -----END PGP PUBLIC KEY BLOCK-----
 </code></pre>
 </details>
-
-1. [k.ohlhus@gmail.com](mailto:k.ohlhus@gmail.com)
-2. [kai.ohlhus@tuhh.de](mailto:kai.ohlhus@tuhh.de)
-3. [ohlhus@lab.twcu.ac.jp](mailto:ohlhus@lab.twcu.ac.jp)
 
 ---
 
