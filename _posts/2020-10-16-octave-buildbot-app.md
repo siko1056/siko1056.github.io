@@ -2,7 +2,7 @@
 layout: post
 title:  "Fresh brewed Octave - every day!"
 date: 2020-10-16
-modified_date: 2020-11-08
+modified_date: 2024-04-10
 categories: blog
 image: /assets/blog/2020-10-16_buildbot_octave_space_icon.png
 tags:
@@ -22,6 +22,8 @@ is my hope to ease the tedious task of creating and publishing Octave releases
 and release candidates.  As said before, now **every day** a stable release
 happens (if there were changes to the Octave stable branch) with no manpower
 needed at all.
+
+> EDIT: 2024-04-10 Project moved <https://octave.space> &rarr; <https://nightly.octave.org>.
 
 
 ## Everything in view

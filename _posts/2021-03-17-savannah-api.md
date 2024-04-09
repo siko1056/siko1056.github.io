@@ -2,6 +2,7 @@
 layout: post
 title:  "SavannahAPI - A more systematic overview about bugs and patches"
 date: 2021-03-17
+modified_date: 2024-04-10
 categories: blog
 image: /assets/blog/2021-03-17-SavannahAPI_client.png
 tags:
@@ -19,6 +20,8 @@ A [data scraping](https://en.wikipedia.org/wiki/Web_scraping) approach
 overcomes some of these limitations
 and offers interesting new insights and overviews.
 
+> EDIT: 2024-04-10 Project moved <https://octave.space/savannah> &rarr; <https://savannah.octave.org>.
+
 
 ## The SavannahAPI interface
 
@@ -31,7 +34,7 @@ neither it has a user or account management.
 For an interface description, see the
 [project README.md on GitHub](https://github.com/gnu-octave/SavannahAPI).
 
-[![JavaScript client](/assets/blog/2021-03-17-SavannahAPI_client.png)](https://octave.space/savannah/)
+[![JavaScript client](/assets/blog/2021-03-17-SavannahAPI_client.png)](https://savannah.octave.org/)
 
 While working on the Octave project with GNU Savannah for a few years,
 I often felt a **lack of overview** about the ever growing number of bugs.
@@ -53,7 +56,7 @@ and
 tracker.
 
 > **SavannahAPI** does not distinguish between bugs or patches.
-> [A single search is enough.](https://octave.space/savannah/?Action=get&Format=HTMLCSS&OrderBy=TrackerID,!ItemID&Keywords=fminsearch)
+> [A single search is enough.](https://savannah.octave.org/?Action=get&Format=HTMLCSS&OrderBy=TrackerID,!ItemID&Keywords=fminsearch)
 
 
 ### 2. Search - Is it already fixed?
@@ -71,7 +74,7 @@ when touching an Octave function for changes, because:
 - one can simultaneously incorporate smaller changes or patches into own changes.
 
 > **SavannahAPI**
-> [shows (almost) all bug information by default](https://octave.space/savannah/?Action=get&Format=HTMLCSS&OrderBy=TrackerID,!ItemID&Keywords=fminsearch),
+> [shows (almost) all bug information by default](https://savannah.octave.org/?Action=get&Format=HTMLCSS&OrderBy=TrackerID,!ItemID&Keywords=fminsearch),
 > especially green and red color indicators.
 > Unnecessary information can be filtered out and search results
 > further narrowed down.
@@ -102,7 +105,7 @@ of another user.
 > [query language](https://github.com/gnu-octave/SavannahAPI#api-parameter-syntax-and-grammar)
 > that is editable and readable from the URL query string,
 > e.g. "all Octave bugs related to the release 6.x":
-> [`Action=get&Format=HTMLCSS&OpenClosed=open&TrackerID=bugs` `&Category!=Forge,website&Release=6`](https://octave.space/savannah/?Action=get&Format=HTMLCSS&OpenClosed=open&TrackerID=bugs&Category!=Forge,website&Release=6)
+> [`Action=get&Format=HTMLCSS&OpenClosed=open&TrackerID=bugs` `&Category!=Forge,website&Release=6`](https://savannah.octave.org/?Action=get&Format=HTMLCSS&OpenClosed=open&TrackerID=bugs&Category!=Forge,website&Release=6)
 
 
 ### 4. Sharing information - a longer short history
@@ -156,9 +159,9 @@ https://savannah.gnu.org/bugs/index.php?go_report=Apply&group=octave
 > For comparison,
 > the same query URL for **SavannahAPI** is shorter, more readable,
 > and more handy to share
-> (["Severity >= 4"](https://octave.space/savannah/?Action=get&Format=HTMLCSS&OpenClosed=open&TrackerID=bugs&Category!=Forge,website&Severity=4,5,6&Status!=Wont)):
+> (["Severity >= 4"](https://savannah.octave.org/?Action=get&Format=HTMLCSS&OpenClosed=open&TrackerID=bugs&Category!=Forge,website&Severity=4,5,6&Status!=Wont)):
 > ```
-> https://octave.space/savannah/?Action=get&Format=HTMLCSS
+> https://savannah.octave.org/?Action=get&Format=HTMLCSS
 >   &OpenClosed=open&TrackerID=bugs&Category!=Forge,website
 >   &Severity=4,5,6&Status!=Wont
 > ```
@@ -197,12 +200,12 @@ individually for the needs of a user.
 A key idea to make this project flexible in its usage is to introduce a server,
 which is able to process queries using a web API
 
-- <https://octave.space/savannah/api.php>
+- <https://savannah.octave.org/api.php>
 
 and a JavaScript client which uses the API to present the query results
 to the user
 
-- <https://octave.space/savannah/>(index.html)
+- <https://savannah.octave.org/>(index.html)
 
 GNU Savannah does not have this server API layer.
 It can only
@@ -244,16 +247,16 @@ they can query a subset of interest in the JavaScript web application,
 or embed the table in their own website, e.g.
 
 - io-package (all bugs):
-  - <https://octave.space/savannah/?[octave%20forge]%20(io)>
-  - <https://octave.space/savannah/api.php?Action=get&Format=HTMLCSS&Title=[octave%20forge]%20(io)>
+  - <https://savannah.octave.org/?[octave%20forge]%20(io)>
+  - <https://savannah.octave.org/api.php?Action=get&Format=HTMLCSS&Title=[octave%20forge]%20(io)>
 - io-package (all open bugs):
-  - <https://octave.space/savannah/?Action=get&Format=HTMLCSS&Title=[octave%20forge]%20(io)&OpenClosed=open>
-  - <https://octave.space/savannah/api.php?Action=get&Format=HTMLCSS&Title=[octave%20forge]%20(io)&OpenClosed=open>
+  - <https://savannah.octave.org/?Action=get&Format=HTMLCSS&Title=[octave%20forge]%20(io)&OpenClosed=open>
+  - <https://savannah.octave.org/api.php?Action=get&Format=HTMLCSS&Title=[octave%20forge]%20(io)&OpenClosed=open>
 
 Similarly, all other kind of **permalinks** to dynamic content can be created
 and shared.
 For example do you want to join a code-sprint on three particular bugs?
-- <https://octave.space/savannah/?Action=get&Format=HTMLCSS&ItemID=60245,60237,60236>
+- <https://savannah.octave.org/?Action=get&Format=HTMLCSS&ItemID=60245,60237,60236>
 
 Any feedback on [GitHub](https://github.com/gnu-octave/SavannahAPI) or
 [Octave Discourse](https://octave.discourse.group/) is very welcome.

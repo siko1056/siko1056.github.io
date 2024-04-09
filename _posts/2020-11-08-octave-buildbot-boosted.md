@@ -2,6 +2,7 @@
 layout: post
 title:  "rsync boosted Buildbots"
 date: 2020-11-08
+modified_date: 2024-04-10
 categories: blog
 image: /assets/blog/2020-11-08_rocket.png
 tags:
@@ -17,6 +18,8 @@ This improvement, and a few others,
 enables a single "strong" Worker to build and publish Octave and all
 MS Windows installers
 within 24 hours or with four parallel Workers within 6 hours.
+
+> EDIT: 2024-04-10 Project moved <https://octave.space> &rarr; <https://nightly.octave.org>.
 
 ## octave-buildbot: the final picture?
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "octave-buildbot: Less painful Octave releases?"
 date: 2020-08-17
-modified_date: 2020-09-09
+modified_date: 2024-04-10
 categories: blog
 image: /assets/blog/2020-08-17_octave_buildbot.png
 tags:
@@ -186,7 +186,7 @@ The current state of the project is:
 - Buildbot Master and Server can be run on
   [a single local machine](https://github.com/gnu-octave/octave-buildbot/tree/master/test)
   or distributed to a webserver and several PCs
-  (see <https://buildbot.octave.space>).
+  (see <https://buildbot.octave.space>, as of 2024-04-10, see <https://nightly.octave.org>).
 - The Octave release tarballs and documentation are built
   and sent to the Master.
 
