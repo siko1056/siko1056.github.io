@@ -138,7 +138,6 @@ KqOLv64ap59LBbiU931vdQ==
 ## Academic
 
 1. [ORCID (0000-0003-3915-953X)](https://orcid.org/0000-0003-3915-953X)
-2. [ResearchGate](https://www.researchgate.net/profile/Kai_Ohlhus)
 
 ---
 
