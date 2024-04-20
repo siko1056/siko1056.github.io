@@ -127,11 +127,10 @@ KqOLv64ap59LBbiU931vdQ==
 
 1. [GitHub](https://github.com/siko1056)
 2. [GitLab](https://gitlab.com/siko1056)
-3. [Bitbucket](https://bitbucket.org/%7B486d60cf-75c1-4208-8907-0650528fb922%7D/)
-4. [Savannah](https://savannah.gnu.org/users/siko1056)
-5. [SourceForge](https://sourceforge.net/u/siko1056/profile)
-6. [Stack Overflow](https://stackoverflow.com/users/3778706/siko1056)
-7. [Wikipedia](https://en.wikipedia.org/wiki/User:Siko1056)
+3. [Savannah](https://savannah.gnu.org/users/siko1056)
+4. [SourceForge](https://sourceforge.net/u/siko1056/profile)
+5. [Stack Overflow](https://stackoverflow.com/users/3778706/siko1056)
+6. [Wikipedia](https://en.wikipedia.org/wiki/User:Siko1056)
 
 ---
 
