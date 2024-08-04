@@ -25,20 +25,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup System
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install JupyterBook
         run: |
-          python3 -m venv pyenv
-          ./pyenv/bin/pip3 install --upgrade \
-            jupyter-book
+          python -m pip install --upgrade jupyter-book
       - name: Setup Pages
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v5
       - name: Build page
         run: |
-          ./pyenv/bin/jupyter-book build --builder=html jupyter
-          mv jupyter/_build/html _site
+          jupyter-book build --builder=html .
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_build'
 
   # Deployment job
   deploy:
@@ -50,4 +53,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
