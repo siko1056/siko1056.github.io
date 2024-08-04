@@ -1,12 +1,6 @@
----
-layout: post
-title:  "Talk about Octave at the University of Tokyo"
-date:   2019-12-24
-categories: blog
-tags:
-  - octave
-  - talks
----
+# Talk about Octave at the University of Tokyo
+
+> Created: 2019-12-24
 
 This Christmas I had the honor to give a
 [seminar talk at the University of Tokyo](https://na.cs.tsukuba.ac.jp/mepa/?page_id=1689),
@@ -14,7 +8,7 @@ which was organized by
 [JSIAM](https://www2.jsiam.org/en/).
 
 The talk is an extension of a
-[previous talk]({{ site.baseurl }}{% post_url 2019-11-22-talk-about-octave %})
+[previous talk](../../../2019/11/22/talk-about-octave.md)
 given in Tokyo.
 
 The topics covered are:

@@ -1,11 +1,6 @@
----
-layout: post
-title:  "Protect your server using fail2ban"
-date: 2019-02-07
-categories: blog
-tags:
-  - software
----
+# Protect your server using fail2ban
+
+> Created: 2019-02-07
 
 While reading the
 [system journal](https://doc.opensuse.org/documentation/leap/reference/html/book.opensuse.reference/cha.journalctl.html)

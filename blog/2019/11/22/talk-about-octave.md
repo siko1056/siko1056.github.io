@@ -1,12 +1,6 @@
----
-layout: post
-title:  "Talk: Scientific programming with GNU Octave"
-date:   2019-11-22
-categories: blog
-tags:
-  - octave
-  - talks
----
+# Talk: Scientific programming with GNU Octave
+
+> Created: 2019-11-22
 
 At the
 [Shibaura Institute of Technology](http://www.web.se.shibaura-it.ac.jp/mathsci/04-01.html)

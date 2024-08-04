@@ -1,12 +1,6 @@
----
-layout: post
-title:  "Setting up an apache2 webserver on openSUSE Leap 15.0"
-date: 2018-06-25
-modified_date: 2019-06-03
-categories: blog
-tags:
-  - software
----
+# Setting up an apache2 webserver on openSUSE Leap 15.0
+
+> Created: 2018-06-25
 
 The goal of this blog post is to properly remember what I did to create my root-server setup using [openSUSE Leap 15.0](https://software.opensuse.org/distributions/leap):
 
@@ -56,7 +50,7 @@ All of them should be run with root privileges.
 
 
 
-# Setting up the directories
+## Setting up the directories
 
 The used directory structure for the websites and services is as follows:
 
@@ -106,7 +100,7 @@ Now the content of a file `index.html` should be displayed when typing "http://w
 
 
 
-# Webserver HTTPS setup
+## Webserver HTTPS setup
 
 Fortunately, these days one has not to pay to be able to use the HTTPS protocol, one can easily make use of services like the [Let's encrypt](https://letsencrypt.org/) project.
 

@@ -1,13 +1,8 @@
----
-layout: post
-title:  "Setting up JupyterHub on openSUSE Leap 15.0"
-date: 2019-01-11
-categories: blog
-tags:
-  - software
----
+# Setting up JupyterHub on openSUSE Leap 15.0
 
-In a [previous blog post]({{ site.baseurl }}{% post_url 2018-06-25-apache2-leap-15-0 %})
+> Created: 2019-01-11
+
+In a [previous blog post](../../../2018/06/25/apache2-leap-15-0.md)
 the setup of the Apache2 webserver including
 [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) was explained.
 Based upon that effort,
