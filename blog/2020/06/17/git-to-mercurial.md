@@ -1,12 +1,6 @@
----
-layout: post
-title:  "Can git and Mercurial work together?"
-date: 2020-06-17
-categories: blog
-image: /assets/blog/2020-06-17_gitlab_export_patch.png
-tags:
-  - octave
----
+# Can git and Mercurial work together?
+
+> Created: 2020-06-17
 
 Many popular source code hosting services do not support
 [Mercurial](https://www.mercurial-scm.org/)
@@ -89,7 +83,7 @@ without cloning the whole Octave fork, adding other remotes, etc.
 See the picture below showing the "merge request" view
 and how to download the associated patch.
 
-![gitlab export patch](/assets/blog/2020-06-17_gitlab_export_patch.png)
+![gitlab export patch](./gitlab_export_patch.png)
 
 Unfortunately, this export button does not exist in GitHub.
 A nice trick that works for GitLab and GitHub is to append `.patch`
@@ -154,7 +148,7 @@ Finally, I exported the imported patch again to get an impression about the
 hg export > ../bug-42424-real-hg.patch
 ```
 The differences between all patches can be seen in
-[this large picture](/assets/blog/2020-06-17_git_hg_patch.png).
+[this large picture](./git_hg_patch.png).
 
 ## Summary
 

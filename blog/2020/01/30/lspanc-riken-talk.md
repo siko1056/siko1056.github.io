@@ -1,12 +1,6 @@
----
-layout: post
-title:  "Talk at LSPANC 2020 in Kobe, Japan"
-date:   2020-01-30
-modified_date: 2020-04-12
-categories: blog
-tags:
-  - talks
----
+# Talk at LSPANC 2020 in Kobe, Japan
+
+> Created: 2020-01-30
 
 My [slides](https://github.com/siko1056/slides_LSPANC_2020/)
 and [the white-paper](https://arxiv.org/abs/2004.04628)

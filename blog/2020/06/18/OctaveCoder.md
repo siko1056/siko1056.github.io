@@ -1,11 +1,6 @@
----
-layout: post
-title:  "Testing the OctaveCoder"
-date: 2020-06-18
-categories: blog
-tags:
-  - octave
----
+# Testing the OctaveCoder
+
+> Created: 2020-06-18
 
 On June 4th there arrived an
 [extraordinary mail by *Hossein*](https://lists.gnu.org/archive/html/octave-maintainers/2020-06/msg00027.html)
