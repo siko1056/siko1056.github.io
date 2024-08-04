@@ -1,13 +1,6 @@
----
-layout: post
-title:  "SavannahAPI - A more systematic overview about bugs and patches"
-date: 2021-03-17
-modified_date: 2024-04-10
-categories: blog
-image: /assets/blog/2021-03-17-SavannahAPI_client.png
-tags:
-  - octave
----
+# SavannahAPI - A more systematic overview about bugs and patches
+
+> Created: 2021-03-17
 
 The [GNU Octave](https://octave.org) project is registered on the code hosting
 platform [GNU Savannah](https://savannah.gnu.org/) since April 2002.
@@ -34,7 +27,7 @@ neither it has a user or account management.
 For an interface description, see the
 [project README.md on GitHub](https://github.com/gnu-octave/SavannahAPI).
 
-[![JavaScript client](/assets/blog/2021-03-17-SavannahAPI_client.png)](https://savannah.octave.org/)
+[![JavaScript client](./SavannahAPI_client.png)](https://savannah.octave.org/)
 
 While working on the Octave project with GNU Savannah for a few years,
 I often felt a **lack of overview** about the ever growing number of bugs.
@@ -193,7 +186,7 @@ individually for the needs of a user.
 
 ## The project in detail
 
-[![project overview](/assets/blog/2021-03-17-project_overview_thumb.jpg)](https://raw.githubusercontent.com/gnu-octave/SavannahAPI/main/doc/project_overview.jpg)
+[![project overview](./project_overview_thumb.jpg)](./project_overview_thumb.jpg)
 
 ### Client-server model
 

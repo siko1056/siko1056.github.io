@@ -1,13 +1,6 @@
----
-layout: post
-title:  "Using directed rounding in Octave/Matlab"
-date:   2021-12-23
-modified_date: 2022-01-18
-image: /assets/blog/2021-12-23_mswin_octave_blas_small.png
-categories: blog
-tags:
-  - octave
----
+# Using directed rounding in Octave/Matlab
+
+> Created: 2021-12-23
 
 The current
 [IEEE Standard for Floating-Point Arithmetic](https://en.wikipedia.org/wiki/IEEE_754)
@@ -259,7 +252,7 @@ C:\Octave\Octave-6.4.0\
 ```
 and right-click on the `octave.vbs` ("edit"):
 
-[![mswin_octave_blas](/assets/blog/2021-12-23_mswin_octave_omp_num_threads.png)](/assets/blog/2021-12-23_mswin_octave_omp_num_threads.png)
+[![mswin_octave_blas](./mswin_octave_omp_num_threads.png)](./mswin_octave_omp_num_threads.png)
 
 and add in the text editor the line:
 ```
@@ -274,7 +267,7 @@ Download the file compiled
 [dynamic-link library (DLL)](https://en.wikipedia.org/wiki/Dynamic-link_library)
 for OpenBLAS:
 
-- [libopenblasFPCSR-0.3.18.dll](/assets/blog/2021/libopenblasFPCSR-0.3.18.dll)
+- [libopenblasFPCSR-0.3.18.dll](./libopenblasFPCSR-0.3.18.dll)
   Below the DLL-file creation is described.
 
 > For the next steps **administrator privileges** might be required.
@@ -286,7 +279,7 @@ C:\Octave\Octave-6.4.0\mingw64\bin
 ```
 like in the screenshot below:
 
-[![mswin_octave_blas](/assets/blog/2021-12-23_mswin_octave_blas.png)](/assets/blog/2021-12-23_mswin_octave_blas.png)
+[![mswin_octave_blas](./mswin_octave_blas.png)](./mswin_octave_blas.png)
 
 Delete the file `libblas.dll`.
 
@@ -356,11 +349,11 @@ ENV["CONSISTENT_FPCSR"] = "1"
 ```
 like in the screenshot below:
 
-[![macos_openblas](/assets/blog/2021-12-23_macos_openblas.png)](/assets/blog/2021-12-23_macos_openblas.png)
+[![macos_openblas](./macos_openblas.png)](./macos_openblas.png)
 
 > If you use a modern MacBook with **Apple M1 chip**,
 > you have to either
-> [patch the OpenBLAS](/assets/blog/2021/openblas-0.3.19-apple-m1.patch)
+> [patch the OpenBLAS](./openblas-0.3.19-apple-m1.patch)
 > source code,
 > or change another two lines like in the screenshot above as follows:
 >

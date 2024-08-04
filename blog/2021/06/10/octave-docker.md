@@ -1,12 +1,6 @@
----
-layout: post
-title:  "Bring your own Octave"
-date: 2021-06-10
-categories: blog
-image: /assets/blog/2021-06-10_octave_jupyterlab.png
-tags:
-  - octave
----
+# Bring your own Octave
+
+> Created: 2021-06-10
 
 Thanks to the efforts of many developers,
 [GNU Octave](https://octave.org) can be installed on all commonly used
@@ -23,7 +17,7 @@ based on
 images,
 which can be customized and shared with others.
 Moreover,
-it can use [JupyterLab](/assets/blog/2021-06-10_octave_jupyterlab.png) as alternative "GUI" for Octave.
+it can use [JupyterLab](./octave_jupyterlab.png) as alternative "GUI" for Octave.
 
 
 ## What is this project about?
@@ -51,14 +45,14 @@ some recommendations and experiences regarding the tools are given.
 The following figure summarizes the available Octave Docker images
 and their dependencies.
 
-[![octave_docker_overview](/assets/blog/2021-06-10_docker_image_hierachy.png)](/assets/blog/2021-06-10_docker_image_hierachy.png)
+[![octave_docker_overview](./docker_image_hierachy.png)](./docker_image_hierachy.png)
 
 
 ## What makes this project different?
 
 The Octave Docker images are created with several usage scenarios in mind.
 
-[![octave_docker_overview](/assets/blog/2021-06-10_octave_docker_overview.png)](/assets/blog/2021-06-10_octave_docker_overview.png)
+[![octave_docker_overview](./octave_docker_overview.png)](./octave_docker_overview.png)
 
 - **Simple usage by (non-root) users**
 
@@ -76,9 +70,9 @@ The Octave Docker images are created with several usage scenarios in mind.
   to start the Octave **and JupyterLab**
   as if it was installed by the Linux distribution.
 
-  [![octave_docker_overview](/assets/blog/2021-06-10_octave_launcher.png)](/assets/blog/2021-06-10_octave_launcher.png)
+  [![octave_docker_overview](./octave_launcher.png)](./octave_launcher.png)
 
-  [![octave_docker_overview](/assets/blog/2021-06-10_octave_jupyterlab.png)](/assets/blog/2021-06-10_octave_jupyterlab.png)
+  [![octave_docker_overview](./octave_jupyterlab.png)](./octave_jupyterlab.png)
 
   **Note:** The system must have either Docker (= Podman) or Singularity
   installed and the user account must be setup to use those tools properly.
@@ -95,11 +89,11 @@ The Octave Docker images are created with several usage scenarios in mind.
   > **Hint:** Using the installation script (described above),
   > the desired version can be started very conveniently
   >
-  > - [`OCTAVE_VERSION=4.0.0 octave --force-gui`](/assets/blog/2021-06-10_Octave_4.0.0.png)
-  > - [`OCTAVE_VERSION=4.2.0 octave --force-gui`](/assets/blog/2021-06-10_Octave_4.2.0.png)
-  > - [`OCTAVE_VERSION=4.4.0 octave --gui`](/assets/blog/2021-06-10_Octave_4.4.0.png)
-  > - [`OCTAVE_VERSION=5.1.0 octave --gui`](/assets/blog/2021-06-10_Octave_5.1.0.png)
-  > - [`OCTAVE_VERSION=6.1.0 octave --gui`](/assets/blog/2021-06-10_Octave_6.1.0.png)
+  > - [`OCTAVE_VERSION=4.0.0 octave --force-gui`](./Octave_4.0.0.png)
+  > - [`OCTAVE_VERSION=4.2.0 octave --force-gui`](./Octave_4.2.0.png)
+  > - [`OCTAVE_VERSION=4.4.0 octave --gui`](./Octave_4.4.0.png)
+  > - [`OCTAVE_VERSION=5.1.0 octave --gui`](./Octave_5.1.0.png)
+  > - [`OCTAVE_VERSION=6.1.0 octave --gui`](./Octave_6.1.0.png)
 
   Please note that storing all those Octave version images is expensive.
   Therefore it is recommend to use **Docker** (Podman) for this task.
@@ -213,7 +207,7 @@ extending existing images is much faster
 (the JupyterLab extensions takes just 3 minutes to build),
 as most of the "hard" work is already done.
 
-[![octave_docker_overview](/assets/blog/2021-06-10_github_actions.png)](/assets/blog/2021-06-10_github_actions.png)
+[![octave_docker_overview](./github_actions.png)](./github_actions.png)
 
 ### Customizing existing images
 
