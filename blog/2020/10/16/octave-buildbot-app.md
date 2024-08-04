@@ -1,17 +1,10 @@
----
-layout: post
-title:  "Fresh brewed Octave - every day!"
-date: 2020-10-16
-modified_date: 2024-04-10
-categories: blog
-image: /assets/blog/2020-10-16_buildbot_octave_space_icon.png
-tags:
-  - octave
----
+# Fresh brewed Octave - every day!
+
+> Created: 2020-10-16
 
 The [octave-buildbot](https://github.com/gnu-octave/octave-buildbot/)
 Server and Worker matured a lot in the past two months since
-[I wrote about them in August]({% post_url 2020-08-17-octave-buildbot %}).
+[I wrote about them in August](../../../2020/08/17/octave-buildbot.md).
 Finally, the system is capable of delivering **once per day** a "fresh brewed"
 stable Octave release (tarballs, all flavors of MS Windows installers, and the
 Doxygen documentation).  See it yourself on <https://octave.space>.
@@ -36,8 +29,8 @@ After a Buildbot Worker finishes his duty, the relevant build artifacts are
 copied to the Buildbot Master, stored with the Octave Mercurial (hg) ID,
 as shown in the screenshot below.
 
-<a href="/assets/blog/2020-10-16_buildbot_octave_space_folder.png">
-  <img src="/assets/blog/2020-10-16_buildbot_octave_space_folder.png"
+<a href="./buildbot_octave_space_folder.png">
+  <img src="./buildbot_octave_space_folder.png"
        alt="png" width="200">
 </a>
 
@@ -49,8 +42,8 @@ Fortunately,
 The result can now be seen on the landing page of <https://octave.space>
 or on the screenshot below.
 
-<a href="/assets/blog/2020-10-16_buildbot_octave_space.png">
-  <img src="/assets/blog/2020-10-16_buildbot_octave_space.png"
+<a href="./buildbot_octave_space.png">
+  <img src="./buildbot_octave_space.png"
        alt="png" width="200">
 </a>
 
@@ -75,8 +68,8 @@ To achieve this, before copying the files to the Buildbot Master,
 the [SHA-256](https://en.wikipedia.org/wiki/SHA-2) hash sum of each file
 is displayed in the Buildbot Workers build log.
 
-<a href="/assets/blog/2020-10-16_buildbot_octave_space_sha256.png">
-  <img src="/assets/blog/2020-10-16_buildbot_octave_space_sha256.png"
+<a href="./buildbot_octave_space_sha256.png">
+  <img src="./buildbot_octave_space_sha256.png"
        alt="png" width="200">
 </a>
 
@@ -109,7 +102,7 @@ each Worker is expected to provide 4 CPUs.
 This value can of course be adjusted.
 
 > **Note:** See
-> [a newer blog post]({% post_url 2020-11-08-octave-buildbot-boosted %})
+> [a newer blog post](../../../2020/11/08/octave-buildbot-boosted.md)
 > for significant improvements.
 
 Builder name | build time | upload time | build space [1] | artifact size

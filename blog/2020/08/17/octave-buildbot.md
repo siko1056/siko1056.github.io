@@ -1,13 +1,6 @@
----
-layout: post
-title:  "octave-buildbot: Less painful Octave releases?"
-date: 2020-08-17
-modified_date: 2024-04-10
-categories: blog
-image: /assets/blog/2020-08-17_octave_buildbot.png
-tags:
-  - octave
----
+# octave-buildbot: Less painful Octave releases?
+
+> Created: 2020-08-17 (last modified: 2024-04-10)
 
 Since the minor
 [Octave 5.2 release this January](https://wiki.octave.org/Release_History),
@@ -108,7 +101,7 @@ The key ideas are far from new:
    [Octave Buildbots](https://wiki.octave.org/Continuous_Build).
 2. **Use a reproducible build environment**.
 
-[![png](/assets/blog/2020-08-17_octave_buildbot.png)](/assets/blog/2020-08-14_octave_buildbot.png)
+[![png](./octave_buildbot.png)](./octave_buildbot.png)
 
 ### 3.1 What is the difference to the existing Octave Buildbots?
 

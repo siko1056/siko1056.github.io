@@ -1,13 +1,6 @@
----
-layout: post
-title:  "rsync boosted Buildbots"
-date: 2020-11-08
-modified_date: 2024-04-10
-categories: blog
-image: /assets/blog/2020-11-08_rocket.png
-tags:
-  - octave
----
+# rsync boosted Buildbots
+
+> Created: 2020-11-08
 
 Using [rsync](https://rsync.samba.org/) instead of Buildbot's own
 [file transfers](https://docs.buildbot.net/latest/manual/configuration/steps/file_transfer.html),
@@ -23,9 +16,9 @@ within 24 hours or with four parallel Workers within 6 hours.
 
 ## octave-buildbot: the final picture?
 
-[![png](/assets/blog/2020-11-08_octave_buildbot.png)](/assets/blog/2020-11-08_octave_buildbot.png)
+[![png](./octave_buildbot.png)](./octave_buildbot.png)
 
-The [initial project design from August]({% post_url 2020-08-17-octave-buildbot %})
+The [initial project design from August](../../../2020/08/17/octave-buildbot.md)
 has "matured" in the following aspects:
 1. The Buildbot Master container can now be accessed from the Workers by SSH.
    This enables rsync file transfers with significant speed improvements.
@@ -50,7 +43,7 @@ has "matured" in the following aspects:
 
 ## The bill revisited
 
-[In a previous post]({% post_url 2020-10-16-octave-buildbot-app %}) the
+[In a previous post](../../../2020/10/16/octave-buildbot-app) the
 computational costs for the Buildbot Workers are listed in Table 1 there.
 This table has been revisited below.
 For the Buildbot Master there were no big changes.

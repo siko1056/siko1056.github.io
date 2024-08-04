@@ -61,7 +61,7 @@ jupyter lab
 In the desired setup all configuration files for the server are located at
 `/srv/www/jupyterhub` and the server should be accessible by the public
 via `https://www.domain.org:8888` as explained in a
-[previous blog post]({{ site.baseurl }}{% post_url 2018-06-25-apache2-leap-15-0 %}).
+[previous blog post](../../../2018/06/25/apache2-leap-15-0.md).
 
 A good starting point is to create a default configuration file
 that can be modified:
