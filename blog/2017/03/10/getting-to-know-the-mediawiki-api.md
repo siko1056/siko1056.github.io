@@ -1,11 +1,6 @@
----
-layout: post
-title:  "Getting to know the MediaWiki API"
-date:   2017-03-10
-categories: blog
-tags:
-  - software
----
+# Getting to know the MediaWiki API
+
+> Created: 2017-03-10
 
 This article is a short introduction to the
 [MediaWiki action API](https://www.mediawiki.org/wiki/API:Main_page),
@@ -17,7 +12,7 @@ for example issued by the command-line tool
 without using the standard web interface.
 
 
-# Prerequisites and preparation
+## Prerequisites and preparation
 
 It is assumed,
 that a successful
@@ -38,7 +33,7 @@ online access to `WIKI/api.php` becomes active
 and Target #1 is about to happen.
 
 
-# Target #1: Login
+## Target #1: Login
 
 The login process consists of two steps:
 
@@ -143,7 +138,7 @@ The session cookies are now properly set and Target #2 is within reach.
 
 
 
-# Target #2: Page updates and file uploads
+## Target #2: Page updates and file uploads
 
 Again two steps are required:
 
@@ -173,7 +168,7 @@ Say the received *csrf* token is `06cd0d427c1192fd13b20462018d768358c2a3c2+\`.
 
 
 
-## Target #2.1: Page update
+### Target #2.1: Page update
 
 With the *csrf* token it is possible to update the content of a page.
 For example to create a new page with title *"My first page"*
@@ -212,7 +207,7 @@ as if the user had used the standard edit web interface.
 
 
 
-## Target #2.2: File upload
+### Target #2.2: File upload
 
 With the *csrf* token it is also possible to upload files.
 A possible *cURL* command to upload the file `test-img.jpg`,

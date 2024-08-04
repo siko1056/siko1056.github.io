@@ -1,12 +1,6 @@
----
-layout: post
-title:  "Seminar notes mathematical optimization"
-date:   2022-01-11
-image: /assets/blog/2022-01-11_gauss_hills.png
-categories: blog
-tags:
-  - math
----
+# Seminar notes mathematical optimization
+
+> Created: 2022-01-11
 
 Today I completed my seminar notes about selected topics in
 [mathematical optimization](https://en.wikipedia.org/wiki/Mathematical_optimization):
@@ -18,16 +12,16 @@ and many [GNU Octave](https://octave.org/) /
 The material was created with [Jupyter Book](https://jupyterbook.org/)
 and [JupyterLab](https://jupyter.org/) running the
 [octave_kernel](https://github.com/Calysto/octave_kernel)
-using the [Octave Docker image]({% post_url 2021-06-10-octave-docker %}).
+using the [Octave Docker image](../../../2021/06/10/octave-docker).
 
 
-### Seminar "Selected Topics in Mathematical Optimization"
+## Seminar "Selected Topics in Mathematical Optimization"
 
 - [Web version](https://siko1056.github.io/optim-2021)
 - [PDF version](https://github.com/siko1056/optim-2021/blob/main/optim-2021.pdf)
 - Repository: <https://github.com/siko1056/optim-2021>
 
-[![mswin_octave_blas](/assets/blog/2022-01-11_gauss_hills.png)](/assets/blog/2022-01-11_gauss_hills.png)
+[![mswin_octave_blas](./gauss_hills.png)](./gauss_hills.png)
 
 ```matlab
 N = 3;

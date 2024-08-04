@@ -1,0 +1,46 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+- caption: About me
+  chapters:
+  - file: contact
+- caption: "2024"
+  chapters:
+  - file: blog/2024/06/23/microk8s
+- caption: "2022"
+  chapters:
+  - file: blog/2022/01/11/seminar-optimization
+- caption: "2021"
+  chapters:
+  - file: blog/2021/12/23/octave-matlab-directed-rounding
+  - file: blog/2021/11/27/talk-nvr
+  - file: blog/2021/06/10/octave-docker
+  - file: blog/2021/03/17/savannah-api
+  - file: blog/2021/01/27/octave-world-plot
+- caption: "2020"
+  chapters:
+  - file: blog/2020/11/23/gsoc2020-json-benchmark
+  - file: blog/2020/11/08/octave-buildbot-boosted
+  - file: blog/2020/10/16/octave-buildbot-app
+  - file: blog/2020/08/19/gsoc2020-json-benchmark
+  - file: blog/2020/08/17/octave-buildbot
+  - file: blog/2020/07/01/octave-hilb-function
+  - file: blog/2020/06/18/OctaveCoder
+  - file: blog/2020/06/17/git-to-mercurial
+  - file: blog/2020/01/30/lspanc-riken-talk
+- caption: "2019"
+  chapters:
+  - file: blog/2019/12/24/talk-about-octave
+  - file: blog/2019/11/22/talk-about-octave
+  - file: blog/2019/02/07/jail2ban-setup
+  - file: blog/2019/01/11/jupyterhub-installation
+- caption: "2018"
+  chapters:
+  - file: blog/2018/06/25/apache2-leap-15-0
+- caption: "2017"
+  chapters:
+  - file: blog/2017/03/20/octconf2017-talk
+  - file: blog/2017/03/10/getting-to-know-the-mediawiki-api

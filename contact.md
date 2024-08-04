@@ -1,32 +1,28 @@
----
-layout: default
-is_contact: true
----
-
-<img alt="kai_ohlhus" class="profile-picture" src="/assets/img/kai_ohlhus.jpg">
+# Contact
 
 ## Email
 
 - [k.ohlhus@gmail.com](mailto:k.ohlhus@gmail.com)
 
-<details>
-<summary>PGP Public Key (ID: 0xBD46BBCE)</summary>
-<table>
-<tr><td>Active Date:    </td><td>May 5, 2018</td></tr>
-<tr><td>Expiration Date:</td><td>never</td></tr>
-<tr><td>Key Type:       </td><td>RSA</td></tr>
-<tr><td>Key Size:       </td><td>4096/4096</td></tr>
-<tr><td>Finger Print:   </td>
-    <td>BFE6 C0C1 F771 4A65 3E63  6B93 993D 6445 BD46 BBCE</td></tr>
-<tr><td>User ID:        </td><td>k.ohlhus@gmail.com</td></tr>
-</table>
+:::{dropdown} My PGP Public Key (ID: 0xBD46BBCE)
 
-<p>
+| Key             | Value       |
+| --------------- | ----------- |
+| Active Date     | May 5, 2018 |
+| Expiration Date | never       |
+| Key Type        | RSA         |
+| Key Size        | 4096/4096   |
+| Finger Print    | BFE6 C0C1 F771 4A65 3E63  6B93 993D 6445 BD46 BBCE |
+| User ID         | k.ohlhus@gmail.com |
+
+---
+
 You can <a href="/assets/k.ohlhus@gmail.com.asc">download this key</a>
 or copy-and-paste the text below.
-</p>
 
-<pre class="highlight"><code>
+---
+
+```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQINBFrxf7QBEADt5BX1E3GUlHD60chjsW4qxmtscE7daxVc1oB98F6ussJvm9P8
@@ -118,10 +114,9 @@ ZRlayJI5qw3HorgezPCO9z5FGLm/i9GCcNqE0o5QehCQ7oCKylu1lKM2tF5owJae
 KqOLv64ap59LBbiU931vdQ==
 =kUlj
 -----END PGP PUBLIC KEY BLOCK-----
-</code></pre>
-</details>
+```
+:::
 
----
 
 ## Programming (@siko1056)
 
@@ -132,13 +127,11 @@ KqOLv64ap59LBbiU931vdQ==
 5. [Stack Overflow](https://stackoverflow.com/users/3778706/siko1056)
 6. [Wikipedia](https://en.wikipedia.org/wiki/User:Siko1056)
 
----
 
 ## Academic
 
 1. [ORCID (0000-0003-3915-953X)](https://orcid.org/0000-0003-3915-953X)
 
----
 
 ## SNS
 

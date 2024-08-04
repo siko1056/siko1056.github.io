@@ -1,13 +1,7 @@
----
-layout: post
-title:  "Talk at the OctConf 2017 at CERN"
-date:   2017-03-20
-modified_date: 2020-06-15
-categories: blog
-tags:
-  - octave
-  - talks
----
+# Talk at the OctConf 2017 at CERN
+
+> Created: 2017-03-20 (last modified: 2020-06-15)
+
 
 The slides of today's talk at the
 [OctConf2017](http://wiki.octave.org/OctConf_2017)
@@ -20,4 +14,4 @@ and
 [grabcode](https://www.gnu.org/software/octave/doc/interpreter/XREFgrabcode.html)
 functions, that I implemented last year and showed some application in
 combination with the
-[MediaWiki action API]({{ site.url }}{% post_url 2017-03-10-getting-to-know-the-mediawiki-api %}).
+[MediaWiki action API](../../../../blog/2017/03/10/getting-to-know-the-mediawiki-api.md).

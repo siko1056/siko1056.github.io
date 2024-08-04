@@ -1,41 +1,33 @@
-title: siko1056.github.io
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: siko1056
 author: Kai Torben Ohlhus
-email: k.ohlhus@gmail.com
-github: siko1056
-image: /assets/img/kai_ohlhus.jpg
-description: >- # this means to ignore newlines until "baseurl:"
-  Some blog about my free/libre and open-source software
-  projects and public talks (topics: GNU Octave, Linux, etc.).
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://siko1056.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-lang: en
+copyright: "2024"
+logo: assets/img/kai_ohlhus.png
 
-markdown: kramdown
-highlighter: rouge
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", .venv]
 
-paginate: 5
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: 'off'
 
-sass:
-    style: compressed
-    sass_dir: _sass
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: siko1056.tex
 
-nav:
- - name: "Blog"
-   link: "/"
- - name: "Contact"
-   link: "/contact"
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - references.bib
 
-plugins:
-   - jekyll-mentions
-   - jemoji
-   - jekyll-redirect-from
-   - jekyll-paginate
-   - jekyll-sitemap
-   - jekyll-feed
+repository:
+  url: https://github.com/siko1056/siko1056.github.io
+  branch: main
 
-exclude:
-  - Gemfile
-  - Gemfile.lock
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_issues_button: true
+  use_repository_button: true
