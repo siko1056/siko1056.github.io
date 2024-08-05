@@ -2,8 +2,8 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: siko1056
-author: Kai Torben Ohlhus
-copyright: "2024"
+author: Ohlhus, Kai Torben
+copyright: "2016-2024"
 logo: assets/img/kai_ohlhus.png
 
 exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", .venv]

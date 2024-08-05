@@ -1,4 +1,4 @@
-# Contact
+# Ohlhus, Kai Torben
 
 ## Email
 
@@ -118,7 +118,7 @@ KqOLv64ap59LBbiU931vdQ==
 :::
 
 
-## Programming (@siko1056)
+## Programming `@siko1056`
 
 1. [GitHub](https://github.com/siko1056)
 2. [GitLab](https://gitlab.com/siko1056)
