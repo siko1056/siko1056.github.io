@@ -26,7 +26,7 @@ pkg install https://github.com/shsajjadi/OctaveCoder/archive/coder-1.0.0-octave-
 
 To test the speed-up there is severe crime in the Octave language:
 **"ijk Matrix multiplication"** using triply nested loops
-```matlab
+```octave
 function C = matrix_mult (A, B)
   [m, r] = size (A);
   [R, n] = size (B);
@@ -48,7 +48,7 @@ endfunction
 As can be seen from a short test run,
 even for rather small dimensions `matrix_mult.m` is by a factor of about
 10,000 slower than Octave's builtin matrix multiplication.
-```matlab
+```octave
 n = 30;
 A = rand (2*n, n);
 B = rand (n, 3*n);
@@ -74,7 +74,7 @@ in the Octave manual.
 
 OctaveCoder claims to speed-up things by factor three to four
 and indeed succeeds:
-```matlab
+```octave
 pkg load coder
 octave2oct ("matrix_mult")
 
@@ -88,7 +88,7 @@ Elapsed time is 0.54394 seconds.
 What happens under the hood?
 There is an option to keep intermediate files during the compilation
 to an oct-file.
-```matlab
+```octave
 octave2oct ("matrix_mult", "KeepSource", true)
 ```
 The output is an about 5000 lines C++-file containing many class definitions
