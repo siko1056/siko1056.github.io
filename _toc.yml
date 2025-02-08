@@ -7,9 +7,6 @@ parts:
 - caption: About me
   chapters:
   - file: contact
-- caption: "2024"
-  chapters:
-  - file: blog/2024/06/23/microk8s
 - caption: "2022"
   chapters:
   - file: blog/2022/01/11/seminar-optimization
