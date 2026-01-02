@@ -3,7 +3,7 @@
 
 title: siko1056
 author: Ohlhus, Kai Torben
-copyright: "2016-2024"
+copyright: "2016-2026"
 logo: assets/img/kai_ohlhus.png
 
 exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", .venv]
