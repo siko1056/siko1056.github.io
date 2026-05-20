@@ -1,6 +1,7 @@
 # Using directed rounding in Octave/Matlab
 
 > Created: 2021-12-23
+> Updated: 2026-05-20
 
 The current
 [IEEE Standard for Floating-Point Arithmetic](https://en.wikipedia.org/wiki/IEEE_754)
@@ -340,10 +341,10 @@ OMP_NUM_THREADS=1 octave --gui
 
 Edit the Homebrew Formula for OpenBLAS:
 ```
-export EDITOR="open -a TextEdit"
+export EDITOR="open -a TextEdit"  # optional
 brew edit openblas
 ```
-and add the line
+and add the line in the "def install" section
 ```
 ENV["CONSISTENT_FPCSR"] = "1"
 ```
@@ -351,19 +352,21 @@ like in the screenshot below:
 
 [![macos_openblas](./macos_openblas.png)](./macos_openblas.png)
 
-> If you use a modern MacBook with **Apple M1 chip**,
-> you have to either
-> [patch the OpenBLAS](./openblas-0.3.19-apple-m1.patch)
-> source code,
-> or change another two lines like in the screenshot above as follows:
+> EDIT: 20206-05-20
 >
-> ```
-> url "https://github.com/siko1056/OpenBLAS/archive/refs/tags/v0.3.19-m1.tar.gz"
-> sha256 "6a0d40d641d877c27ef6325212f340f4a3e20d0122357e8fac76dd9ad2aee58d"
-> ```
+> As part of this project,
+> on 2022-09-22 the OpenBLAS project accepted a patch for Apple M1+ (aarch64 architecture)
+> with the OpenBLAS release v0.3.22:
+> [](https://github.com/OpenMathLib/OpenBLAS/commit/84453b924fe7695029cad974dfe0cf7bf6ffe0f6).
+>
+> Full credit for the idea of this patch is to Masahide Kashiwagi in the previously mentioned
+> [blog post on Apple M1 chips](http://verifiedby.me/adiary/0158).
+>
+> A previously here described OpenBLAS source code patching is no longer required.
 
 Finally run from the Terminal:
 ```
+export HOMEBREW_NO_INSTALL_FROM_API=1  # Ensure to use local changes
 brew uninstall --ignore-dependencies openblas
 brew reinstall --build-from-source   openblas
 ```
