@@ -1,6 +1,7 @@
 # Using directed rounding in Octave/Matlab
 
 > Created: 2021-12-23
+>
 > Updated: 2026-05-20
 
 The current
@@ -357,7 +358,7 @@ like in the screenshot below:
 > As part of this project,
 > on 2022-09-22 the OpenBLAS project accepted a patch for Apple M1+ (aarch64 architecture)
 > with the OpenBLAS release v0.3.22:
-> [](https://github.com/OpenMathLib/OpenBLAS/commit/84453b924fe7695029cad974dfe0cf7bf6ffe0f6).
+> [84453b9](https://github.com/OpenMathLib/OpenBLAS/commit/84453b924fe7695029cad974dfe0cf7bf6ffe0f6).
 >
 > Full credit for the idea of this patch is to Masahide Kashiwagi in the previously mentioned
 > [blog post on Apple M1 chips](http://verifiedby.me/adiary/0158).
