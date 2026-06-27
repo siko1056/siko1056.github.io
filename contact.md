@@ -124,8 +124,7 @@ KqOLv64ap59LBbiU931vdQ==
 2. [GitLab](https://gitlab.com/siko1056)
 3. [Savannah](https://savannah.gnu.org/users/siko1056)
 4. [SourceForge](https://sourceforge.net/u/siko1056/profile)
-5. [Stack Overflow](https://stackoverflow.com/users/3778706/siko1056)
-6. [Wikipedia](https://en.wikipedia.org/wiki/User:Siko1056)
+5. [Wikipedia](https://en.wikipedia.org/wiki/User:Siko1056)
 
 
 ## Academic
