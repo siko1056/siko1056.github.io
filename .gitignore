@@ -1,2 +1,5 @@
 _build
+_site
 .venv
+/.quarto/
+**/*.quarto_ipynb
