@@ -1,6 +1,9 @@
 ---
 title: "Bring your own Octave"
+author: "Kai T. Ohlhus"
 date: "2021-06-10"
+categories:
+  - octave
 draft: false
 ---
 

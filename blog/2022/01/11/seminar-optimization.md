@@ -1,6 +1,10 @@
 ---
 title: "Seminar notes mathematical optimization"
+author: "Kai T. Ohlhus"
 date: "2022-01-11"
+categories:
+  - math
+  - octave
 draft: false
 ---
 
