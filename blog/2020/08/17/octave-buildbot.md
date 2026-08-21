@@ -4,7 +4,6 @@ author: "Kai T. Ohlhus"
 date: "2020-08-17"
 date-modified: "2024-04-10"
 categories:
-  - math
   - octave
 draft: false
 --- 
