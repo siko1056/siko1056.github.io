@@ -1,13 +1,14 @@
 ---
 title: "Latest blog posts"
 listing:
-  contents: blog
-  feed: true
-  sort: "date desc"
-  type: default
   categories: true
-  sort-ui: false
+  contents: blog
+  date-format: medium
+  feed: true
   filter-ui: false
+  sort: "date desc"
+  sort-ui: false
+  type: default
 page-layout: full
 title-block-banner: true
 ---
