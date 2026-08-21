@@ -1,6 +1,13 @@
-# octave-buildbot: Less painful Octave releases?
-
-> Created: 2020-08-17 (last modified: 2024-04-10)
+---
+title: "octave-buildbot: Less painful Octave releases?"
+author: "Kai T. Ohlhus"
+date: "2020-08-17"
+date-modified: "2024-04-10"
+categories:
+  - math
+  - octave
+draft: false
+--- 
 
 Since the minor
 [Octave 5.2 release this January](https://wiki.octave.org/Release_History),

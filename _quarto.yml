@@ -1,0 +1,32 @@
+project:
+  type: website
+
+website:
+  description: "Blog posts from siko1056"
+  site-url: https://siko1056.github.io/
+  title: "siko1056"
+  navbar:
+    right:
+      - about.qmd
+      - icon: rss
+        href: index.xml
+      - icon: github
+        href: https://github.com/siko1056/siko1056.github.io
+  search: 
+    location: navbar
+    type: overlay
+
+format:
+  html:
+    css: styles.css
+    respect-user-color-scheme: true
+    theme:
+      light:
+        - flatly
+        - brand
+      dark:
+        - darkly
+        - brand
+
+execute:
+  freeze: true

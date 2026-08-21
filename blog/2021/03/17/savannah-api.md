@@ -1,6 +1,13 @@
-# SavannahAPI - A more systematic overview about bugs and patches
-
-> Created: 2021-03-17
+---
+title: "SavannahAPI - A more systematic overview about bugs and patches"
+author: "Kai T. Ohlhus"
+date: "2021-03-17"
+date-modified: "2024-04-10"
+categories:
+  - octave
+  - web
+draft: false
+---
 
 The [GNU Octave](https://octave.org) project is registered on the code hosting
 platform [GNU Savannah](https://savannah.gnu.org/) since April 2002.

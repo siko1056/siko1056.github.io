@@ -1,13 +1,54 @@
-# Ohlhus, Kai Torben
+---
+title: "About"
+image: ./assets/img/kai_ohlhus.png
+about:
+  template: jolla  # https://quarto.org/docs/websites/website-about.html#templates
+  links:
+    - icon: envelope-at
+      text: k.ohlhus@gmail.com
+      href: mailto:k.ohlhus@gmail.com
+    
+    - icon: orcid
+      text: ORCID
+      href: https://orcid.org/0000-0003-3915-953X
 
-## Email
+    - icon: github
+      text: GitHub
+      href: https://github.com/siko1056
 
-- [k.ohlhus@gmail.com](mailto:k.ohlhus@gmail.com)
+    - icon: gitlab
+      text: GitLab
+      href: https://gitlab.com/siko1056
 
-:::{dropdown} My PGP Public Key (ID: 0xBD46BBCE)
+    - icon: code-slash
+      text: Savannah
+      href: https://savannah.gnu.org/users/siko1056
+    
+    - icon: sourceforge
+      text: SourceForge
+      href: https://sourceforge.net/u/siko1056/profile
+    
+    - icon: wikipedia
+      text: Wikipedia
+      href: https://en.wikipedia.org/wiki/User:Siko1056
+
+    - icon: instagram
+      text: Instagram
+      href: https://www.instagram.com/siko1056_
+    
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/siko1056
+---
+
+Kai T. Ohlhus holds a PhD in Computer Science
+and is a Free and Open Source enthusiast living and working in Japan.
+
+<details style="text-align: left;">
+<summary>My PGP Public Key (ID: 0xBD46BBCE)</summary>
 
 | Key             | Value       |
-| --------------- | ----------- |
+|:----------------|:------------|
 | Active Date     | May 5, 2018 |
 | Expiration Date | never       |
 | Key Type        | RSA         |
@@ -15,12 +56,10 @@
 | Finger Print    | BFE6 C0C1 F771 4A65 3E63  6B93 993D 6445 BD46 BBCE |
 | User ID         | k.ohlhus@gmail.com |
 
----
-
+::: {.callout-note}
 You can <a href="/assets/k.ohlhus@gmail.com.asc">download this key</a>
 or copy-and-paste the text below.
-
----
+:::
 
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
@@ -115,24 +154,5 @@ KqOLv64ap59LBbiU931vdQ==
 =kUlj
 -----END PGP PUBLIC KEY BLOCK-----
 ```
-:::
 
-
-## Programming `@siko1056`
-
-1. [GitHub](https://github.com/siko1056)
-2. [GitLab](https://gitlab.com/siko1056)
-3. [Savannah](https://savannah.gnu.org/users/siko1056)
-4. [SourceForge](https://sourceforge.net/u/siko1056/profile)
-5. [Wikipedia](https://en.wikipedia.org/wiki/User:Siko1056)
-
-
-## Academic
-
-1. [ORCID (0000-0003-3915-953X)](https://orcid.org/0000-0003-3915-953X)
-
-
-## SNS
-
-1. [Instagram](https://www.instagram.com/siko1056_)
-2. [LinkedIn](https://www.linkedin.com/in/siko1056)
+</details>

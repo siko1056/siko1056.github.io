@@ -1,8 +1,13 @@
-# Using directed rounding in Octave/Matlab
-
-> Created: 2021-12-23
->
-> Updated: 2026-05-20
+---
+title: "Using directed rounding in Octave/Matlab"
+author: "Kai T. Ohlhus"
+date: "2021-12-23"
+date-modified: "2026-05-20"
+categories:
+  - matlab
+  - octave
+draft: false
+---
 
 The current
 [IEEE Standard for Floating-Point Arithmetic](https://en.wikipedia.org/wiki/IEEE_754)

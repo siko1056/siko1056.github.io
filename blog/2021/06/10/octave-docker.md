@@ -1,6 +1,11 @@
-# Bring your own Octave
-
-> Created: 2021-06-10
+---
+title: "Bring your own Octave"
+author: "Kai T. Ohlhus"
+date: "2021-06-10"
+categories:
+  - octave
+draft: false
+---
 
 Thanks to the efforts of many developers,
 [GNU Octave](https://octave.org) can be installed on all commonly used

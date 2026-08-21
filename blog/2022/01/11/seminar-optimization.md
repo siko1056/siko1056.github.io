@@ -1,6 +1,12 @@
-# Seminar notes mathematical optimization
-
-> Created: 2022-01-11
+---
+title: "Seminar notes mathematical optimization"
+author: "Kai T. Ohlhus"
+date: "2022-01-11"
+categories:
+  - math
+  - octave
+draft: false
+---
 
 Today I completed my seminar notes about selected topics in
 [mathematical optimization](https://en.wikipedia.org/wiki/Mathematical_optimization):
@@ -12,7 +18,7 @@ and many [GNU Octave](https://octave.org/) /
 The material was created with [Jupyter Book](https://jupyterbook.org/)
 and [JupyterLab](https://jupyter.org/) running the
 [octave_kernel](https://github.com/Calysto/octave_kernel)
-using the [Octave Docker image](../../../2021/06/10/octave-docker).
+using the [Octave Docker image](/blog/2021/06/10/octave-docker.html).
 
 
 ## Seminar "Selected Topics in Mathematical Optimization"

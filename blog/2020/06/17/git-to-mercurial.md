@@ -1,6 +1,12 @@
-# Can git and Mercurial work together?
-
-> Created: 2020-06-17
+---
+title: "Can git and Mercurial work together?"
+author: "Kai T. Ohlhus"
+date: "2020-06-17"
+categories:
+  - linux
+  - octave
+draft: false
+---
 
 Many popular source code hosting services do not support
 [Mercurial](https://www.mercurial-scm.org/)

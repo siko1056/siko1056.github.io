@@ -1,6 +1,14 @@
-# Talk at LSPANC 2020 in Kobe, Japan
-
-> Created: 2020-01-30
+---
+title: "Talk at LSPANC 2020 in Kobe, Japan"
+author: "Kai T. Ohlhus"
+date: "2020-01-30"
+categories:
+  - container
+  - linux
+  - octave
+  - talk
+draft: false
+---
 
 My [slides](https://github.com/siko1056/slides_LSPANC_2020/)
 and [the white-paper](https://arxiv.org/abs/2004.04628)

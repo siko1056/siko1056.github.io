@@ -1,6 +1,12 @@
-# Protect your server using fail2ban
-
-> Created: 2019-02-07
+---
+title: "Protect your server using fail2ban"
+author: "Kai T. Ohlhus"
+date: "2019-02-07"
+categories:
+  - linux
+  - web
+draft: false
+---
 
 While reading the
 [system journal](https://doc.opensuse.org/documentation/leap/reference/html/book.opensuse.reference/cha.journalctl.html)
@@ -85,13 +91,13 @@ First one has to install the software.
 *openSUSE* makes this task pretty comfortable by typing
 
 
-```
+```bash
 sudo zypper in fail2ban
 ```
 
 Then I edited as `root` the configuration file `/etc/fail2ban/jail.local`:
 
-```
+```conf
 # Do all your modifications to the jail's configuration in jail.local!
 
 [DEFAULT]
@@ -107,7 +113,7 @@ backend = %(sshd_backend)s
 
 and finally started the already available service:
 
-```
+```bash
 sudo systemctl start fail2ban.service
 ```
 
