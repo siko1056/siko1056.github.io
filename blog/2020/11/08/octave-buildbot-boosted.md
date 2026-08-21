@@ -1,6 +1,12 @@
-# rsync boosted Buildbots
-
-> Created: 2020-11-08
+---
+title: "rsync boosted Buildbots"
+author: "Kai T. Ohlhus"
+date: "2020-11-08"
+date-modified: "2024-04-10"
+categories:
+  - octave
+draft: false
+---
 
 Using [rsync](https://rsync.samba.org/) instead of Buildbot's own
 [file transfers](https://docs.buildbot.net/latest/manual/configuration/steps/file_transfer.html),

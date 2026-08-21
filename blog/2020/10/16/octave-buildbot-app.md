@@ -1,6 +1,12 @@
-# Fresh brewed Octave - every day!
-
-> Created: 2020-10-16
+---
+title: "Fresh brewed Octave - every day!"
+author: "Kai T. Ohlhus"
+date: "2020-10-16"
+date-modified: "2024-04-10"
+categories:
+  - octave
+draft: false
+---
 
 The [octave-buildbot](https://github.com/gnu-octave/octave-buildbot/)
 Server and Worker matured a lot in the past two months since
