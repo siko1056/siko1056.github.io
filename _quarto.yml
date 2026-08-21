@@ -27,3 +27,6 @@ format:
       dark:
         - darkly
         - brand
+
+execute:
+  freeze: true
