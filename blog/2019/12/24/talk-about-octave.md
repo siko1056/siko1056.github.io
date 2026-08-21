@@ -1,6 +1,12 @@
-# Talk about Octave at the University of Tokyo
-
-> Created: 2019-12-24
+---
+title: "Talk about Octave at the University of Tokyo"
+author: "Kai T. Ohlhus"
+date: "2019-12-24"
+categories:
+  - octave
+  - talk
+draft: false
+---
 
 This Christmas I had the honor to give a
 [seminar talk at the University of Tokyo](https://na.cs.tsukuba.ac.jp/mepa/?page_id=1689),
@@ -8,7 +14,7 @@ which was organized by
 [JSIAM](https://www2.jsiam.org/en/).
 
 The talk is an extension of a
-[previous talk](../../../2019/11/22/talk-about-octave.md)
+[previous talk](/blob/2019/11/22/talk-about-octave.html)
 given in Tokyo.
 
 The topics covered are:

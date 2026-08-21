@@ -1,6 +1,12 @@
-# Setting up an apache2 webserver on openSUSE Leap 15.0
-
-> Created: 2018-06-25
+---
+title: "Setting up an apache2 webserver on openSUSE Leap 15.0"
+author: "Kai T. Ohlhus"
+date: "2018-06-25"
+categories:
+  - linux
+  - web
+draft: false
+---
 
 The goal of this blog post is to properly remember what I did to create my root-server setup using [openSUSE Leap 15.0](https://software.opensuse.org/distributions/leap):
 
@@ -66,7 +72,7 @@ Those configuration files are located in the
 directory and have the `*.conf` extension.
 The `myMkDocsSite.conf` may look like this:
 
-```
+```html
 <VirtualHost *:80>
     DocumentRoot "/srv/www/myMkDocsSite"
     ServerName www.domain.org

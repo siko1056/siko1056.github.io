@@ -3,6 +3,7 @@ title: "Talk (online) at the JST/CREST meeting"
 author: "Kai T. Ohlhus"
 date: "2021-11-27"
 categories:
+  - octave
   - talk
 draft: false
 ---

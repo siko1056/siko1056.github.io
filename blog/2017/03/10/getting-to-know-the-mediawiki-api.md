@@ -1,6 +1,11 @@
-# Getting to know the MediaWiki API
-
-> Created: 2017-03-10
+---
+title: "Getting to know the MediaWiki API"
+author: "Kai T. Ohlhus"
+date: "2017-03-10"
+categories:
+  - web
+draft: false
+---
 
 This article is a short introduction to the
 [MediaWiki action API](https://www.mediawiki.org/wiki/API:Main_page),
@@ -50,7 +55,7 @@ for details.
 The first step can be performed by a simple
 [login token](https://www.mediawiki.org/wiki/API:Tokens) *GET* request:
 
-```
+```bash
 curl --cookie COOKIE_JAR \
      --cookie-jar COOKIE_JAR \
      WIKI/api.php?action=query&meta=tokens&type=login&format=json
@@ -65,7 +70,7 @@ but other formats are possible as well.
 
 The ([jq](https://stedolan.github.io/jq) formatted) output looks like:
 
-```
+```json
 {
   "batchcomplete": "",
   "query": {
@@ -81,7 +86,7 @@ This can be done for example by using
 [sed](https://www.gnu.org/software/sed/manual/sed.html)
 with a regular expression:
 
-```
+```bash
 sed -n 's/.*"logintoken":"\(\S\+\)\+\\".*/\1/p'
 ```
 
@@ -96,7 +101,7 @@ one is able to perform a
 For example using the following *cURL* command with a mix of
 *GET* and *POST* parameters:
 
-```
+```bash
 curl --cookie COOKIE_JAR \
      --cookie-jar COOKIE_JAR \
      --data-urlencode "username=User1" \
@@ -113,7 +118,7 @@ special characters in the `name=content` data pairs can be handled by using
 Those pairs are sent as *POST* data.
 The successful ([jq](https://stedolan.github.io/jq) formatted) output is:
 
-```
+```json
 {
   "clientlogin": {
     "status": "PASS",
@@ -125,7 +130,7 @@ The successful ([jq](https://stedolan.github.io/jq) formatted) output is:
 And in case of a typo,
 one would receive instead:
 
-```
+```json
 {
   "clientlogin": {
     "status": "FAIL",
@@ -150,7 +155,7 @@ The first step can be performed by another simple *GET* request.
 Actually it is almost the same request as in Target #1,
 but `type=login` is omitted and all session cookies are properly set:
 
-```
+```bash
 curl --cookie COOKIE_JAR \
      --cookie-jar COOKIE_JAR \
      WIKI/api.php?action=query&meta=tokens&format=json
@@ -160,7 +165,7 @@ Again the *csrf* token can be filtered out by using
 [sed](https://www.gnu.org/software/sed/manual/sed.html)
 and a regular expression:
 
-```
+```bash
 sed -n 's/.*"csrftoken":"\(\S\+\)\+\\".*/\1/p'
 ```
 
@@ -174,7 +179,7 @@ With the *csrf* token it is possible to update the content of a page.
 For example to create a new page with title *"My first page"*
 the *cURL* command looks like:
 
-```
+```bash
 curl --cookie COOKIE_JAR \
      --cookie-jar COOKIE_JAR \
      --data-urlencode "title=My first page" \
@@ -185,7 +190,7 @@ curl --cookie COOKIE_JAR \
 
 The successful ([jq](https://stedolan.github.io/jq) formatted) output is:
 
-```
+```json
 {
   "edit": {
     "new": "",
@@ -214,7 +219,7 @@ A possible *cURL* command to upload the file `test-img.jpg`,
 located at `/home/user1/test-img.jpg`,
 is:
 
-```
+```bash
 curl --cookie COOKIE_JAR \
      --cookie-jar COOKIE_JAR \
      --form "filename=test-img.jpg" \
@@ -234,7 +239,7 @@ what can be done using [--form](https://curl.haxx.se/docs/manpage.html#-F).
 The abbreviated ([jq](https://stedolan.github.io/jq) formatted) output
 of a successful upload is:
 
-```
+```json
 {
   "upload": {
     "result": "Success",

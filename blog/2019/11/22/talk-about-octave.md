@@ -1,6 +1,12 @@
-# Talk: Scientific programming with GNU Octave
-
-> Created: 2019-11-22
+---
+title: "Talk: Scientific programming with GNU Octave"
+author: "Kai T. Ohlhus"
+date: "2019-11-22"
+categories:
+  - octave
+  - talk
+draft: false
+---
 
 At the
 [Shibaura Institute of Technology](http://www.web.se.shibaura-it.ac.jp/mathsci/04-01.html)
